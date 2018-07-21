@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>扩展运算</title>
+</head>
+<body>
+	
+</body>
+<script>
+	// var arr=[11,22,33,44];
+	// console.log(arr);
+	// console.log(...arr);
+
+	// function show(n1,n2,n3){
+	// 	console.log(n1,n2,n3)
+	// }
+	// var arr=[11,22,33];
+	// show.apply(null,arr);
+	// show(...arr);
+
+	// function sum(...arr){
+	// 	var result=0;
+	// 	for(var i=0;i<arr.length;i++){
+	// 		result+=arr[i]
+	// 	}
+	// 	return result;
+	// }
+
+	// var arr=[11,22,33,44,55];
+	// console.log(sum(...arr));
+
+	// 求最大值
+	// var arr=[11,22,33,77,23]
+	// console.log(Math.max.apply(null,arr));
+	// console.log(Math.max(...arr));
+
+	var arr1=[11,22,33,44];
+
+	// var arr2=arr1;
+	// arr2.push(111);
+
+	// var arr2=[];
+	// for(var i=0;i<arr1.length;i++){
+	// 	arr2.push(arr1[i]);
+	// }
+
+	// arr2=arr1.concat();
+
+	// arr2=arr1.slice();
+
+    var arr2=[];
+	arr2.push(...arr1);
+	arr2.push(111);
+	console.log(arr1,arr2);
+
+    var obj1={name:'Tom',age:18};
+    console.log(obj1);
+    var obj2=obj1;
+    obj2.name='Amy';
+    console.log(obj1,obj2);
+
+	var obj1={name:'tom',age:18,friend:{name:'leo',age:20}};
+	var obj2={...obj1};
+	obj2.name='amy';
+	obj2.friend.name='bog';
+	console.log(obj1,obj2);
+</script>
+</html>

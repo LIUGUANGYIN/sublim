@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head><meta charset="UTF-8">
+	<title></title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.btn{
+			overflow: hidden;
+		}
+		.btn li{
+			width: 50px;
+			height: 25px;
+			line-height: 25px;
+			font-size: 20px;
+			background: #000;
+			color: #fff;
+			text-align: center;
+			border-radius: 10px;
+			float:left;
+			margin-right:10px;
+			cursor: pointer; 
+		}
+		.btn li.active{
+			background: rgba(255,255,0,0.5);
+			color: #000;
+		}
+		.conten li{
+			width: 250px;
+			height: 400px;
+			border:1px solid;
+			list-style: none;
+			display: none;
+		}
+	</style>
+	<script>
+		window.onload=function(){
+			new Tab();
+		}
+		function Tab(){
+			this.aBtn=document.getElementById('btn').children;
+			this.aConten=document.getElementById('conten').children;
+			     
+				for(var i=0;i<this.aBtn.length;i++){
+					this.aBtn[i].index=i;
+					this.aBtn[i].onclick=this.fnClick.bind(this,this.aBtn[i]);
+	}
+	}
+		Tab.prototype.fnClick=function(obtn){
+				   for(var j=0;j<this.aBtn.length;j++){
+					 this.aBtn[j].className='';
+					this.aConten[j].style.display='none';
+				}
+				     this.aBtn[obtn.index].className='active';
+				     this.aConten[obtn.index].style.display='block';			
+				}			
+	</script>
+</head>
+<body>
+	<ul id='btn' class='btn'>
+		<li class='active'>btn1</li>
+		<li>btn2</li>
+		<li>btn3</li>
+		<li>btn4</li>
+	</ul>
+	<div id='conten' class='conten'>
+		<li style='display: block'>conten1</li>
+		<li>conten2</li>
+		<li>conten3</li>
+		<li>conten4</li>
+		
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>let变量定义</title>
+</head>
+<script>
+	// let name='tom';
+	// console.log(name);
+
+	// {
+	// 	let age=18;
+	// 	console.log(age);
+	// }
+    
+    function show(){
+    	let name='tom';
+    	console.log(name);
+    	function showName(){
+    		let name='leo';
+    		console.log(name);
+    		
+    	}
+    	showName();
+    }
+    show();
+
+    var oBtn=document.getElementByTagId('button');
+    for(let i=0;i<oBtn.length;i++){
+    	oBtn[i].onclick=function(){
+    		console.log(i);
+    	}
+    }
+</script>
+<body>
+	<button id='button'>1</button>
+	<button id='button'>2</button>
+	<button id='button'>3</button>
+	<button id='button'>4</button>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>弹性布局</title>
+	<style>
+	    *{
+		   margin: 0;
+		   padding: 0;
+	    }
+	    .father{
+	    	width: 1000px;
+	    	height: 600px;
+	    	border: 1px solid #000;
+	    	margin:20px auto;
+	    	display: flex;
+
+	    	/*决定项目的排列方向,有以下取值row(默认值):水平方向,起点在左端*/
+	    	/*flex-direction:row;*/
+	    	/*水平方向,起点在右端*/
+	    	/*flex-direction:row-reverse; */
+            /*垂直方向,起点在上沿*/
+	    	/*flex-direction:column;*/
+            /*垂直方向,起点在下沿 */
+	    	/*flex-direction:column-reverse;*/
+
+
+            /*决定项目一行排不下，如何换行,有以下取值nowrap(默认值):不换行,元素的宽度按照指定款的的比例从新计算*/
+	    	/*flex-wrap :nowrap;*/
+            /*wrap:换行,第一行在上方*/
+            /*flex-wrap:wrap;*/
+            /*wrap-reverse:换行,第一行在下方*/
+            /*flex-wrap:wrap-reverse;*/
+            /*换行后项目的垂直对齐方式由align-items/align-content来决定*/
+
+            /*决定项目的水平对齐方式,有以下取值*/
+            /*(默认值):左对齐*/
+            /*justify-content :flex-start;*/
+            /*右对齐*/
+            /*justify-content :flex-end;*/
+            /*居中*/
+            /*justify-content :center;*/
+            /*两端对齐,项目之间的间隔都相等*/
+            /*justify-content :space-between;*/
+            /*每个项目两侧的间隔相等。所以,项目之间的间隔比项目与边框的间隔大一倍*/
+            /*justify-content :space-around;*/
+            
+            /*
+             align-items/align-content 决定项目的垂直对齐方式,有以下取值
+            stretch(默认值):换行后,如果项目未设置高度或设为auto,将占满整个容器的高度
+            flex-start：起点对齐
+            flex-end：终点对齐
+            center：中点对齐
+            baseline: 项目的第一行文字的基线对齐
+            align-items/align-content的区别在于:
+            align-item换行后会根据父容器的高度填充整个行
+            align-content换行后按项目的的高度来填充行*/
+	    }
+	    .son1{
+	    	width: 200px;
+	    	height: 50px;
+	    	background: red;
+	    	/*order:3;排序*/
+	    	/*flex-grow:1;1为等分剩余空间2多一倍*/
+	    }
+	    .son2{
+	    	width: 300px;
+	    	height: 50px;
+	    	background: blue;
+	    	/*order:2;*/
+	    	/*flex-grow:3;*/
+	    	/*flex-shrink:1;1为等比缩小0为不缩小*/
+        }
+	    .son3{
+	    	width: 400px;
+	    	height: 50px;
+	    	background: pink;
+	    	/*order:1;*/
+	    	/*flex-grow:1; */
+	    }
+
+	</style>	
+</head>
+<body>
+	<div class="father">
+		<div class="son1">son1</div>
+		<div class="son2">son2</div>
+		<div class="son3">son3</div>
+	</div>
+	
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>拖拽事件</title>
+	<style>
+		*{
+			padding:0px;
+			margin:0px;  
+		}
+		.containe{
+			width: 400px;
+			height: 400px;
+			background: blue;
+		}
+		.target{
+			width: 100px;
+			height: 100px;
+			background: red;
+		}
+	</style>
+</head>
+<body>
+	<div class="containe" id="containe"></div>
+	<div class="target" id="target" draggable="true"></div>
+	
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+		$(function(){
+			$('#target')
+			.on('dragstart',function(ev){
+				ev.originalEvent.dataTransfer.setData('targetId',ev.target.id)
+			})
+			.on('drag',function(){//被拖动元素拖动时触发
+				console.log('target drag')
+			})
+			.on('dragend',function(){//拖拽时松开鼠标时触发
+				console.log('target dragend')
+			});
+
+			$('#containe')
+			.on('drop',function(ev){//当放置被拖动元素时触发
+				var targetId=ev.originalEvent.dataTransfer.getData('targetId')
+			    $('#containe').append($('#'+targetId))	
+			})
+			.on('dragenter',function(){//当被拖动元素进入容器时触发
+				console.log('containe dragenter')
+			})
+			.on('dragleave',function(){//当被拖动元素离开容器时触发
+				console.log('containe dragleave')
+			})
+			.on('dragend',function(){//被拖动元素在容器中松开鼠标时触发
+				console.log('containe dragend')
+			})
+			.on('drag',function(){//容器中的被拖动元素拖动时触发
+				console.log('containe drag')
+			})
+			.on('dragover',function(ev){
+				ev.preventDefault();
+			})
+
+	})
+	</script>
+</html>

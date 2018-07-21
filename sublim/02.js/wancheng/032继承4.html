@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head><meta charset="UTF-8">
+	<title></title>
+	<script>
+		function Person(name,age){
+			this.name=name;
+			this.age=age;
+		}
+		Person.prototype.showName=function(){
+			console.log('I am '+this.name);
+		}
+		Person.prototype.showAge=function(){
+			console.log('I am '+this.age+' years old');
+		}
+		var p1=new Person('Tom',19);
+		p1.showName();
+		p1.showAge();
+
+		function Student(name,age,classname){
+			Person.call(this,name,age);
+			this.classname=classname;
+		}
+		var obj=Object.create(Person.prototype);
+		Student.prototype=obj;
+		Student.prototype.constructor=Student;
+		Student.prototype.showClassName=function(){
+			console.log('I am '+this.classname);
+		}
+		var s1=new Student('leo',16,'ury');
+		s1.showName()
+		s1.showAge()
+		s1.showClassName()
+
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>

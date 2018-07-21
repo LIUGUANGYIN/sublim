@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>promise上方法</title>
+</head>
+<body>
+	
+</body>
+<script>
+	let get=(url)=>{
+		let promise=new Promise((reluve,reject)=>{
+			let image=new Image();
+			image.onload=()=>{
+				reluve();
+			}
+			image.oneror=()=>{
+				reject();
+			}
+			image.src=url;
+		})
+		return promise;
+	}
+	let promise=get('img/b1.jpg');
+	console.log(promise);
+	promise
+	.then(()=>{
+		console.log('success load....');
+		throw new Error('test')
+	})
+	.catch((error)=>{
+		console.log(error);
+	})
+	.finally(()=>{
+		console.log('finally...')
+	})
+</script>
+</html>

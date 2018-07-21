@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8">
+	<title></title>
+	<script src="js/jquery-1.12.4.js"></script>
+	<script>
+		$(function(){
+			var aLi=document.getElementsByTagName('li');
+			var arr=[11,22,33,44];
+			var Liae={0:'li1',1:'li2',2:'li3',3:'li4','length':4}
+			console.log(aLi);
+			console.log(arr);
+			console.log(Liae);
+			/*arr.forEach(function(value,index){
+				console.log(value)
+			});*/
+			/*aLi.forEach(function(value,index){
+				console.log(value)
+			})*/
+			/*$.each(arr,function(index,value){
+				console.log(value)
+			})*/
+			/*var $res=$.each(aLi,function(index,value){
+				console.log(value)
+			})
+			console.log($res)*/
+			/*var $res=$.each(Liae,function(index,value){
+				console.log(value)
+			})
+			console.log($res)*/
+			$.map(arr,function(value,index){
+				console.log(value)
+			})
+		})
+
+	</script>
+</head>
+<body><li>li1</li>
+      <li>li2</li>
+      <li>li3</li>
+      <li>li4</li>
+
+</body>
+</html>

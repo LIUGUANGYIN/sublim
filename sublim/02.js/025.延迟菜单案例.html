@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>025.延迟菜单案例.html</title>
+	<style>
+		#leftBox{
+			width: 100px;
+			height: 50px;
+			background: red;
+			float: left;
+		}
+		#rightBox{
+			width: 500px;
+			height: 600px;
+			background: blue;
+			display: none;
+			float: left;
+			margin-left: 10px;
+		}
+	</style>
+	<script>
+		window.onload = function(){
+			var oLeft=document.getElementById('leftBox');
+			var oRight=document.getElementById('rightBox');
+			var timer=null;
+			oLeft.onmouseover=function(){
+				clearTimeout(timer)
+				oRight.style.display='block';
+			}
+			oRight.onmouseout=function(){
+				timer=setTimeout(function(){
+					oRight.style.display='none'
+				},100)				
+			}
+			oLeft.onmouseout=function(){
+				timer=setTimeout(function(){
+					oRight.style.display='none'
+				},100)
+				
+			}
+			oRight.onmouseover=function(){
+				clearTimeout(timer)
+				oRight.style.display='block'
+			}
+		}
+	</script>
+</head>
+<body>
+	<div id='leftBox'></div>
+	<div id='rightBox'></div>
+	
+</body>
+</html>

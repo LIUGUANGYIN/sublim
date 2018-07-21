@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>map</title>
+</head>
+<body>
+	
+</body>
+<script>
+	let obj1={name:'tom'};
+	let map=new Map();
+	 map.set('name','tom');
+	 map.set(obj1,'hahaha');
+ //     console.log(obj1);
+	//  console.log(map.get('name'));
+	//  console.log(map.get(obj1));
+	//  map.delete('name');
+	//  console.log(map);
+	//  map.clear();
+
+	//  console.log(map.has('name'));
+
+	for(key of map.keys()){
+		console.log(key);
+	}
+
+	for(value of map.values()){
+		console.log(value);
+	}
+
+	for(entry of map.entries()){
+		console.log(entry);
+	}
+
+	map.forEach(function(value,key){
+		console.log(value,key);
+	})
+
+</script>
+</html>

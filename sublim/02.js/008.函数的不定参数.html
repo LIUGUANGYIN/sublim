@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>不定参数</title>
+	<script>//arguments是系统创建的参数的集合
+		function sum(){
+			console.log(arguments);
+			var result=0;
+			for(var i=0;i<arguments.length;i++){
+				result+=arguments[i];
+			}
+			alert(result)
+		}
+		sum(5,4)
+	</script>
+</head>
+<body>
+
+</body>
+</html>

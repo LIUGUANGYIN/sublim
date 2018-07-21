@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>转化</title>
+	<script>
+		window.onlond=function(){
+			var oTxt1=document.getElementByTagName('txt1');
+			var oTxt2=document.getElementByTagName('txt2');
+			var oBtn=document.getElementById('btn');
+			oBtn.onclink=function(){
+				var value1=parseInt(oTxt1);
+				var value2=parseInt(oTxt2);
+				If(isNaN(value1)){
+					alert('第一个数字有误')
+				}else if(isNaN(value2)){
+					alert('第二个数字有误')
+				}else{
+					alert(value1+value2)
+				}
+
+			}
+		}
+	</script>
+</head>
+<body>
+	<input type="box" name="txt1">
+	<input type="box" name="txt2">
+	<button id='btn'>点击</button>
+
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		
+		body{
+			width: 100%;
+			height: 3000px;	
+		}
+		#topNav{
+			width: 100%;
+			height: 0px;
+			background: red;
+			position: fixed;
+			top: 0;
+		}
+
+		#nav{
+			width: 100%;
+			height: 100px;
+			background: blue;
+		}
+		
+	</style>
+	<script>
+		function animation(obj,attr,iTarget){
+		clearInterval(obj.timer);
+		timer=setInterval(function(){
+			if (attr=='opacity'){
+	        var curr=(getcomputedStyle(obj.false)[attr])*100;
+	        }else{
+	        	var curr=getcomputedStyle(obj.false)[attr];
+	        }
+            var iSpeed=0;
+            if(curr>iTarget){
+            	iSpeed=-10;
+            } else{
+            	iSpeed=10;
+            }
+            if(Math.abs(iTarget-curr)<=Math.abs(iSpeed)){
+            	clearInterval(timer);
+            	if (attr=='opacity'){
+            	obj.style[attr]=iTarget/100;
+            }else{
+            	obj.style[attr]=iTarget
+            }
+            }else{if (attr=='opacity'){
+        	    obj.style[attr]=(curr+iSpeed)/100;
+        	}else{
+        		obj.style[attr]=curr+iSpeed+'px';
+        	}
+        	}
+		},30)
+	}
+	var isShow=false;
+		window.onscroll=function(){
+			var oDiv=document.getElementById('topNav');
+			var oMain=document.getElementById('main');
+			var iTop=document.body.scrollTop||document.documentElement.scrollTop;
+			console.log('iTop='+iTop);
+			if(iTop>=100){
+				if(!isShow){
+					animation(oDiv,'height',100);
+					isShow=true;
+					oMain.style.marginTop='100px';
+				}
+			}else{
+				if(isShow){
+					animation(oDiv,'height',0);
+					isShow=false;
+					oMain.style.marginTop='0px';
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<div id='nav'></div>
+	<div id='topNav'></div>
+	<div id='main'>
+		aaaa<br>
+		bbbbb	
+	</div>
+
+</body>
+</html>

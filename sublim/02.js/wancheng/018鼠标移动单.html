@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8">
+	<title></title>
+	<style>
+	body{
+		width: 100%;
+		height: 3000px;
+	}
+		#div1{
+			width: 100px;
+			height: 100px;
+			background: red;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+	</style>
+	<script>
+		function getPoint(ev){
+				var iTop=document.body.scrollTop||document.documentElement.scrollTop;
+				var iLeft=document.body.scrollLeft||document.documentElement.scrollLeft;
+				return {x:ev.clientX+iLeft,y:ev.clientY+iTop}
+				}
+		window.onload=function(){
+			var oDiv=document.getElementById('div1');
+			document.onmousemove=function(ev){
+				var oEvent=ev||event;
+			var oPoint=getPoint(oEvent);
+				oDiv.style.left=oPoint.x+'px';
+				oDiv.style.top=oPoint.y+'px';
+			}
+			
+		}
+	</script>
+</head>
+<body>
+	<div id="div1"></div>
+
+</body>
+</html>

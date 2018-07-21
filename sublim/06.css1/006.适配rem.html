@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>适配rem</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		img{
+			float: left;
+			width: 3rem;
+		}
+		h2{
+			font-size: 0.2rem;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<img src="img/girl.jpg" alt="">
+		<h2>我是移动端我是移动端我是移动端</h2>
+	</div>	
+</body>
+<script>
+	// (function(win,doc){
+	// 	var oFont=doc.getElementsByTagName('html')[0];
+	// 	var iWidth=doc.body.clientWidth||doc.documentElement.clientWidth;
+	// 	var iFont=iWidth/10+'px';
+	// 	oFont.style.fontSize=iFont;
+	// })(window,document);
+
+	(function(win,doc){
+		var oFont=doc.getElementsByTagName('html')[0];
+
+		function fontSize(){
+		var iWidth=doc.body.clientWidth||doc.documentElement.clientWidth;
+		var iFont=iWidth/10+'px';
+		oFont.style.fontSize=iFont;
+		}
+
+		win.addEventListener('resize',fontSize,false);
+		doc.addEventListener('DOMContentLoaded',fontSize,false);
+		
+	})(window,document);
+</script>
+</html>

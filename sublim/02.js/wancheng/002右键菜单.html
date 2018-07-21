@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8">
+	<title></title>
+	<style>
+		#menu{
+			width: 50px;
+			height: 200px;
+			background: #ccc;
+			display: none;
+			position: absolute;
+			top:0;
+			left:0;
+			font-color:red;
+		}
+	</style>
+	<script>
+		window.onload=function(){
+			var oMenu=document.getElementById('menu');
+			document.oncontextmenu=function(ev){
+				var oEvent=ev||event;
+				oMenu.style.display='block';
+				oMenu.style.left=oEvent.clientX+'px';
+				oMenu.style.top=oEvent.clientY+'px';
+				return false;
+				document.onclick=function(){
+					oMenu.style.display='none';
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<div id="menu">aaa
+		<br>sss
+		<br>ddd
+		<br>fff
+		<br>
+	aaaa</div>
+
+</body>
+</html>

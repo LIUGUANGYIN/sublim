@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8">
+	<title></title>
+	<style>
+		.fathe{
+			width: 200px;
+			height: 200px;
+			background: red;
+			margin: 100px auto;
+		}
+		.son{
+			width: 50px;
+			height: 50px;
+			background: blue;
+		}
+	</style>
+	<script src="js/jquery-1.12.4.js"></script>
+	<script>
+		$(function(){
+			//获得
+			console.log($('.son').offset());
+			//修改
+			$('.son').offset({
+				             top:'200',
+				             left:'100'});
+			
+	})
+	</script>
+</head>
+<body>
+	<div class='fathe'>
+		<div class='son'></div>
+	</div>
+
+</body>
+</html>

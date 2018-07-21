@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>006.隔行变色.html</title>
+<style>
+	li{
+		list-style: none;
+		width: 400px;
+		height: 50px;
+		border: 1px solid;
+	}
+</style>
+<script>
+	window.onload=function(){
+		var aLi=document.getElementsByTagName('li');
+		for(i=0;i<aLi.length;i++){
+			if(i%2==0){
+				aLi[i].style.background='blue'
+			}else{
+				aLi[i].style.background='red'
+			}
+		}
+	}
+</script>
+</head>
+<body>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	
+</body>
+</html>

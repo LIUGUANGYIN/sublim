@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8">
+	<title></title>
+	<style>
+	*{
+            margin: 0;
+			padding: 0;
+	}
+		#box{
+			width: 500px;
+			height: 50px;
+			background: #ccc;
+		}
+		#btn{
+			width: 50px;
+			height: 50px;
+			background: red;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+		#div0{
+			width: 100px;
+			height: 100px;
+			background: blue;
+			position: absolute;
+		}
+		
+	</style>
+	<script>
+		window.onload=function(){
+			var oBtn=document.getElementById('btn');
+			var oBox=document.getElementById('box');
+			var oDiv0=document.getElementById('div0');
+			oBtn.onmousedown=function(ev){
+				var oEvent=ev||event;
+				var disX=oEvent.clientX-oBtn.offsetLeft;
+				document.onmousemove=function(ev){
+				     var oEvent=ev||event;
+				     var l=oEvent.clientX-disX;
+
+				if(l<0){
+					l=0;
+				}else if(l>oBox.offsetWidth-oBtn.offsetWidth){
+						l=oBox.offsetWidth-oBtn.offsetWidth;
+					}
+					console.log(l/(oBox.offsetWidth-oBtn.offsetWidth));
+					var scale=l/(oBox.offsetWidth-oBtn.offsetWidth);
+					oDiv0.style.width=500*scale+'px';
+					oDiv0.style.height=500*scale+'px';
+					oBtn.style.left=l+'px';
+				
+				}
+				document.onmouseup=function(){
+					document.onmousemove=null;
+					document.onmouseup=null;
+				}
+		}
+	}
+	</script>
+</head>
+<body>
+	<div id='box'>
+		<div id='btn'></div>
+	</div>
+	<div id='div0'></div>
+	
+</div>
+
+</body>
+</html>

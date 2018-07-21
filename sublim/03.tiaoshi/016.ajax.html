@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<input type="button" value="获取数据" id="btn">
+</body>
+<script>
+	var oBtn=document.getElementById('btn');
+	oBtn.onclick=function(){
+		var oAjax=new XMLHttpRequest();
+		
+		oAjax.open('GET','http://127.0.0.1:3000/018.aa.json',true);
+		
+		oAjax.send();
+		
+		oAjax.onreadystatechange=function(){
+		
+		if(oAjax.readyState==4){
+			
+			if(oAjax.status==200){
+				console.log('get data success::',oAjax.responseText);
+				
+			}else{
+				console.log('get data faild::',oAjax.status);
+
+			}
+		}
+	}
+}
+</script>
+</html>

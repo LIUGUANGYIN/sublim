@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>绘制曲线</title>
+	<style>
+		canvas{
+			border: 1px solid #000;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="canvas"></canvas>
+	
+</body>
+<script>
+	var oCanvas=document.getElementById('canvas');
+	oCanvas.width=600;
+	oCanvas.height=600;
+	
+	var ctx=oCanvas.getContext('2d');
+
+	ctx.beginPath();
+// 	二次样条曲线: context.quadraticCurveTo(qcpx,qcpy,qx,qy)
+// http://blogs.sitepointstatic.com/examples/tech/canvas-curves/quadratic-curve.html
+// ctx.lineWidth = 6;
+// ctx.strokeStyle = "#333";
+// ctx.beginPath();
+// ctx.moveTo(77, 369);
+// ctx.quadraticCurveTo(255, 5, 205, 370);
+// ctx.stroke()
+
+// 贝塞尔曲线: context.bezierCurveTo(cp1x,cp1y,cp2x,cp2y,x,y)
+// http://blogs.sitepointstatic.com/examples/tech/canvas-curves/bezier-curve.html
+ctx.lineWidth = 6;
+ctx.strokeStyle = "#333";
+ctx.beginPath();
+ctx.moveTo(136, 378);
+ctx.bezierCurveTo(41, 150, 467, 265, 269, 401);
+ctx.stroke();
+
+</script>
+</html> 

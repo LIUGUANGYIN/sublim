@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8">
+	<title></title>
+	<style>
+	* {
+            margin: 0;
+            padding: 0;
+        }
+        .reg {
+            width: 980px;
+            margin: 50px auto;
+        }
+        .reg div {
+            position: relative;
+            margin-bottom: 20px;
+            zoom: 1;
+            display: block;
+        }
+        .reg div:after {
+            content: "";
+            clear: both;
+            display: block;
+            visibility: hidden;
+            height: 0;
+        }
+        .reg label {
+            display: block;
+            float: left;
+            height: 42px;
+            width: 65px;
+            margin-right: 10px;
+            line-height: 42px;
+            font-size: 14px;
+            color: #666;
+            font-weight: 700;
+            text-align: right;
+        }
+        .reg input {
+            display: block;
+            position: relative;
+            float: left;
+            height: 16px;
+            width: 328px;
+            padding: 11px 10px;
+            margin-right: 10px;
+            border: 1px solid #ddd;
+            font-size: 14px;
+            color: #666;
+            transition: .3s;
+            float: left;
+        }
+        #verify-box input:nth-of-type(1){
+             width: 158px;
+        }
+        #verify-box input:nth-of-type(2){
+            border-radius: 0;
+            height: 40px;
+            background: #f7f7f7;
+            font-weight: 400;
+            width: 160px;
+            text-align: center;
+            cursor: pointer;
+        }
+        #verify-box input:nth-of-type(2):focus{
+            border: 1px solid #ddd;
+        }
+        #verify-box input:nth-of-type(2):hover
+        {
+            background-color: #eee;
+        }
+        #verify-box .cancel{
+            left: 212px;
+        }
+        .reg .subBtn {
+            position: relative;
+            left: 75px;
+        }
+        .reg .subBtn input {
+            display: block;
+            height: 50px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            color: #fff;
+            background-image: none;
+            border-radius: 3px;
+            border: 0;
+            float: left;
+            width: 350px;
+            background-color: #3f89ec;
+        }
+        .reg input:focus {
+            border-color: #488ee7;
+            outline: 0;
+        }
+        .msg{
+            display: none;
+        }
+        .ok {
+            display: inline-block;
+            position: relative;
+            float: left;
+            top: 14px;
+            height: 16px;
+            line-height: 12px;
+            padding-left: 20px;
+            background: url(images/reg_icons.png) -80px 0 no-repeat;
+        }
+        .err {
+            float: left;
+            position: relative;
+            width: 250px;
+            top: 12px;
+            color: #fc4343;
+            height: 16px;
+            line-height: 14px;
+            padding-left: 20px;
+            background: url(images/reg_icons.png) -80px -23px no-repeat;
+            font-size: 12px;
+        }
+        .cancel {
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            background: url(images/reg_icons.png) -32px -24px no-repeat;
+            top: 12px;
+            left: 398px;
+            cursor: pointer;
+        }
+        .cancel:hover {
+            background-position: -48px -24px;
+        }
+        .tiptext {
+            font-size: 12px;
+            color: #aaa;
+            height: 40px;
+            line-height: 40px;
+        }
+        #username-box .tiptext{
+            line-height: 18px;
+            width: 250px;
+            float: left;
+        }
+        #pwdChecklist{
+            margin-left: 10px;
+            padding: 5px 10px;
+            border: 1px solid #ddd;
+            box-shadow: 1px 1px 1px #efefef;
+            background: #f9f9f9;
+            width: 200px;
+            font-size: 12px;
+            position: absolute;
+            top: 0;
+            right: 318px;
+        }
+        .pwd-checklist li{
+            list-style: none;
+        }
+        .pwd-checklist .pwd-checklist-item-success {
+            background-position: -86px -128px;
+        }
+        .pwd-checklist  .pwd-checklist-item-error {
+            color: rgb(252, 67, 67);
+            background-position: -86px -144px;
+        }
+        .pwd-checklist-item {
+            line-height: 20px;
+            padding-left: 18px;
+            background: url(images/reg_icons.png) no-repeat -86px -112px;
+            color: #666;
+        }
+        .pwd-checklist-arrow{
+            width: 14px;
+            height: 14px;
+            background: #f9f9f9;
+            position: absolute;
+            top: 12px;
+            left: -7px;
+            transform: rotateZ(45deg);
+            border-bottom: 1px solid #ddd;
+            border-left: 1px solid #ddd;       
+        }
+        #agree-box{
+            font-size: 12px;
+        }
+        #agree-box a{
+            text-decoration: none;
+        }
+        #agree-box label{
+            width: 60px;
+            height: 40px;
+            vertical-align: top;
+            font-size: 12px;
+            color: #666;
+            font-weight: normal;
+            margin:-12px 0px 0px 2px;
+        }
+        #agree-box input{
+            width: 20px;
+            margin: 1px 0px 0px 70px;
+        }
+        #agree-box .msg{
+            float: none;
+            top: 0;
+            color: #fc4343;
+        }
+		
+	</style>
+	<script>
+		 function getLen(str){
+            return str.replace(/[\u4e00-\u9fa5]/g,'aa').length;
+         }
+         function setErr(oMsg,sMsg,oInput){
+                    oMsg.className = 'err';
+                    oMsg.innerHTML =sMsg;
+                    oInput.style.borderColor = 'red';
+         }
+         function setOk(oMsg,oInput){
+         	        oMsg.className='ok';
+            	    oMsg.innerHTML='';
+            	    oInput.style.borderColor='#ddd';
+         }
+		window.onload=function(){
+            var oForm=document.forms[0];
+            var oUserName=oForm.username;
+            var oPhone=oForm.phone;
+            var oPassword=oForm.password;
+            var aMsg=document.querySelectorAll('.msg');
+            var aCancel=document.querySelectorAll('.cancel');
+             init()；
+
+        function init(){
+                oUserName.focus();
+                aMsg[0].className = 'tiptext';
+                aMsg[0].innerHTML = '设置后不可更改<br>中英文均可,最长14个英文或7个汉字'; 
+	          }  
+       oUserName.oninput=function(){
+            if(oUserName.value.length>0){
+                aCancel[0].style.display='block';
+            }else{
+                aCancel[0].style.display='none';
+              
+            }
+         } 
+          aCancel[0].onclick=function(){
+                oUserName.value='';
+                aCancel[0].style.display='none';
+                oUserName.focus();
+            }
+            oUserName.focus=function(){
+                aMsg[0].className='tiptext'
+                aMsg[0].innerHTML='设置后不可更改<br>中英文均可，最长14个英文或7个汉字';
+                 oUserName.style.borderColor  = '#488ee7'; 
+            }
+            oUserName.onblur=function(){
+            	aMsg[0].className='msg';
+            	oUserName.style.borderColor='#ddd';
+            	var sVa1=oUserName.value;
+            	var reg1=/[^\u4e00-\u9fa5|a-z|0-9_]/;
+            	var reg2=/^\d+$/;
+            	var reg3=/^\s+$/;
+            	if(sVa1==''){
+            		
+            	}else if(getLen(sVa1)>14){
+                     setErr(aMsg[0],'用户名不能超过7个汉字或14个字符',oUserName);
+                }else if(reg3.test(sVa1)){
+                     setErr(aMsg[0],'请输入用户名',oUserName)
+                }else if(reg1.test(sVa1)||reg2.test(sVa1)){
+                     setErr(aMsg[0],'用户名仅支持中英文、数字和下划线,且不能为纯数字',oUserName)
+                }else{
+            	     setOk(aMsg[0],oUserName)
+                }
+            }
+
+       oPhone.oninput=function(){
+             if(oPhone.value.length > 0){
+                        aCancel[1].style.display = 'block';
+                    }else{
+                        aCancel[1].style.display = 'none';
+                }
+            }
+          aCancel[1].onclick=function(){
+                oPhone.value='';
+                aCancel[1].style.display='none';
+                oPhone.focus();
+            }
+            oPhone.focus=function(){
+                aMsg[1].className='tiptext';
+                aMsg[1].innerHTML='请输入中国大陆手机号,其他用户不可见';
+                oPhone.style.borderColor = '#488ee7'; 
+            }
+
+            oPhone.onblur=function(){
+            	aMsg[1].className='msg';
+            	oPhone.style.borderColor='#ddd';
+            	var sVa1=oPhone.value;
+            	var reg1=/^\s+$/;
+            	var reg2 = /^1[35789]\d{9}$/;
+            	if(sVa1==''){
+                      
+            	}else  if(reg1.test(sVa1)){
+                      setErr(aMsg[1],'请输入手机号',oPhone)
+                }else if(!reg2.test(sVa1)){
+            	     
+                      setErr(aMsg[1],'手机号码格式不正确',oPhone)
+                }else{
+            	     setOk(aMsg[1],oPhone)
+                }
+            }
+
+
+       /* oPassword.oninput=function(){
+            if(oPassword.value.length>0){
+                aCancel[0].style.display='block';
+            }else{
+                aCancel[0].style.display='none';
+            }
+             }
+           oPassword.onclick=function(){
+                oPassword.value='';
+                aCancel[0].style.display='none';
+                oPassword.focus();
+            }
+            oPassword.focus=function(){
+                aMsg[0].className='tiptext'
+                aMsg[0].innerHTML='设置后不可更改<br>中英文均可，最长14个英文或7个汉字';
+                oPassword.style.borderColor = '#488ee7'; 
+            }
+            oPassword.onblur=function(){
+            	aMsg[0].className='msg';
+            	 oPassword.style.borderColor='#ddd';
+            	var sVa1=oUserName.value;
+            	var reg1=/[^\u4e00-\u9fa5|a-z|0-9_]/;
+            	var reg2=/^\d+$/;
+            	var reg3=/^\s+$/;
+            	if(sVa1==''){
+            		aMsg[0].className='tiptext'
+                    aMsg[0].innerHTML='设置后不可更改<br>中英文均可，最长14个英文或7个汉字';
+                     oPassword.style.borderColor = '#488ee7'; 
+            	}else if(sVa1>14){
+            		 aMsg[0].className = 'err';
+                     aMsg[0].innerHTML ='用户名不能超过7个汉字或14个字符';
+                     oPassword.style.borderColor = 'red';
+            }else if(reg3.test(sVa1)){
+            	     aMsg[0].className = 'err';
+                     aMsg[0].innerHTML ='请输入用户名';
+                      oPassword.style.borderColor = 'red';
+            }else if(reg1.test(sVa1)||reg2.test(sVa1)){
+            	     aMsg[0].className = 'err';
+                     aMsg[0].innerHTML ='用户名仅支持中英文、数字和下划线,且不能为纯数字';
+                      oPassword.style.borderColor = 'red';
+            }else{
+            	aMsg[0].className='ok';
+            	aMsg[0].innerHTML='';
+            	 oPassword.style.borderColor='#ddd';
+                }
+            }*/
+        }
+	</script>
+</head>
+<body>
+	 <div class="reg" id='reg'>
+        <form action="http://www.kuazhu.com">
+            <div id="username-box">
+                <label for="username">用户名</label>
+                <input type="text" name="username" placeholder="请设置用户名">
+                <span class="cancel" data-obj="username" style="display: none;"></span>
+                <span class="msg"></span>
+            </div>
+            <div id="phone-box">
+                <label for="phone">手机号</label>
+                <input type="text" name="phone" placeholder="可用于登录和找回密码">
+                <span class="cancel" style="display: none;"></span>
+                <span class="msg"></span>
+            </div>
+            <div id="pwd-box" class="pwd-box">
+                <label for="password">密码</label>
+                <input type="password" name="password" placeholder="请设置登录密码"/>
+                <span class="cancel" style="display: none;"></span>
+                <span class="msg"></span>
+                <div id="pwdChecklist" class="pwd-checklist" style="display:none">
+                    <ul>
+                        <li class="pwd-checklist-item ">长度为6~14个字符</li>
+                        <li class="pwd-checklist-item ">支持数字,大小写字母和标点符号</li>
+                        <li class="pwd-checklist-item ">不允许有空格</li>
+                    </ul>
+                    <span class="pwd-checklist-arrow"></span>
+                </div>
+            </div>
+            <div id="verify-box">
+                <label for="verify">验证码</label>
+                <input type="text" name="verify" placeholder="请输入验证码">
+                <span class="cancel" style="display: none;"></span>
+                <input type="button"  id="smsBtn" value="获取短信验证码">
+                <span class="msg"></span>       
+            </div> 
+            <div id='agree-box'>
+               <input type="checkbox" name='isAgree' id='isAgree'> 
+               <label for="isAgree">阅读并接受</label>
+               <a href="#">《百度用户协议》</a>及<a href="#">《百度隐私权保护声明》</a>  
+               <span class="msg" id='agreeErr'>选“阅读并接受百度用户协议”</span>               
+            </div>           
+            <div class="subBtn">
+                <input type="button" value="注册" id="subBtn">
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>

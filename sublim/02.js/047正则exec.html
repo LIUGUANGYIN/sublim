@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head><meta charset="UTF-8">
+	<title>047正则exec.html</title>
+	
+	<script>
+		window.onload=function(){
+			var oTxt=document.getElementById('txt');
+			var oTxt1=document.getElementById('txt1');
+		
+		var str='asdyfgya2018-05-12dghldfkj2017-08-15'
+		var reg=/(\d{4})-(\d{2})-(\d{2})/g;
+		var arr=[];
+		var ar=[];
+		while(arr=reg.exec(str)){
+			ar.push(arr[3],arr[2],arr[1]);
+		
+		console.log(ar)
+		oTxt.value=arr;
+		oTxt1.value=ar;
+		}}
+	</script>
+</head>
+<body>
+	<textarea name='' id='txt' cols='30' rows='10' ></textarea>
+
+	<textarea name='' id='txt1' cols='30' rows='10' ></textarea>
+	
+</body>
+</html>

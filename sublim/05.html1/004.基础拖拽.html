@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>004.基础拖拽.html</title>
+	<style>
+		*{
+			padding:0px;
+			margin:0px;  
+		}
+		.containe{
+			width: 400px;
+			height: 400px;
+			background: blue;
+		}
+		.target{
+			width: 100px;
+			height: 100px;
+			background: red;
+		}
+	</style>
+</head>
+<body>
+	<div class="containe" id="containe"></div>
+	<div class="target" id="target" draggable="true"></div>
+	
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+		$(function(){
+			$('#containe')
+			.on('drop',function(){
+			    $('#containe').append($('#target'))	
+			})
+			.on('dragover',function(ev){
+				ev.preventDefault();
+			})
+	})
+	</script>
+</html>

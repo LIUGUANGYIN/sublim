@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8">
+	<title></title>
+	<style>
+		div{
+			width: 200px;
+			height: 200px;
+			border: 1px solid #000;
+		}
+	</style>
+	<script>
+		window.onload=function(){
+			var oDiv=document.getElementById('div1');
+			function aS(){
+				alert(1)
+			}
+			oDiv.addEventListener('click',aS,false);
+			oDiv.addEventListener('click',function(){
+				alert(2)
+			},false);
+			oDiv.removeEventListener('click',aS,false);
+
+		}
+	</script>
+</head>
+<body>
+	<div id='div1'></div>
+
+</body>
+</html>

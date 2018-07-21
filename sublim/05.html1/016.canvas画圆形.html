@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>canvas画圆形</title>
+	<style>
+		canvas{
+			border: 1px solid #000;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="canvas"></canvas>
+	
+</body>
+<script>
+	var oCanvas=document.getElementById('canvas');
+	oCanvas.width=600;
+	oCanvas.height=300;
+	
+	var ctx=oCanvas.getContext('2d');
+
+	ctx.beginPath();
+	ctx.arc(300,150,50,0,2*Math.PI,false);//圆心x,圆心y,半径,起始角度,终止角度,是否是逆时针(true为逆时针)
+	ctx.strokeStyle='red';
+	ctx.fillStyle='#ff0'
+	ctx.stroke();//描边
+	ctx.fill();//填充
+</script>
+</html> 

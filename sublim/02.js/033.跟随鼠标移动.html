@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>跟随鼠标移动</title>
+	<style>
+		div{
+			width: 100px;
+			height: 100px;
+			background: red;
+			position:absolute;
+			top:0;
+			left: 0; 
+		}
+	</style>
+	<script>
+		window.onload=function(){
+			var oDiv=document.getElementById('div1');
+			document.onmousemove=function(ev){
+				var oEvent=ev||event;
+				oDiv.style.left=oEvent.clientX+'px';
+				oDiv.style.top=oEvent.clientY+'px';
+			}
+		}
+	</script>
+</head>
+<body>
+	<div id='div1'></div>
+	
+</body>
+</html>

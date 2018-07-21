@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8">
+	<title></title>
+	<script>
+		(function(w){
+		function Teacher(name){
+			this.name=name;
+			this.student=[];
+		}
+		Teather.prototype={
+			constructor:Teacher,
+			_proto_:Object.prototype,
+			register:function(student){
+				this.student.push(student);
+			}
+
+			publish:function(msg){
+				for(var i=0;i<this.student.length;i++){
+					this.student[i].listen(msg);
+				}
+			}
+		}
+		w.Teacher=Teacher;
+	}(window)
+	(function(w){
+		function Student(name,teather){
+			this.name=name;
+			Teacher.register(this);
+			this.mag='';
+		}
+		Student.prototype={
+			constructor:Teacher,
+			_proto_:Object.prototype,
+			listen:function(mag){
+				this.mag=mag
+			}
+		}
+		w.Student=Student;
+	})(window)
+	var teacher=new Teacher('Tom');
+
+	Teather.publish('zuoye');
+
+	var s1=new Student('张三');
+	var s2=new Student('李四');
+	var s3=new Student('王五');
+	console.log(s1,mag)
+	console.log(s2,mag)
+	console.log(s3,mag)
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>

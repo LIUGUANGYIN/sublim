@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>	
+<head><meta charset="UTF-8">
+	<title></title>
+	<script>
+		function Person(name,age){
+			this.name=name;
+			this.age=age;
+			this.showName=function(){
+				console.log('I am '+ this.name);
+			}
+			this.showAge=function(){
+				console.log( 'I am '+this.age+' years old')
+			}
+		}
+		var p1= new Person('Tom',20);
+		p1.showName();
+		p1.showAge();
+		
+		var p2= new Person('Amy',30);
+		p2.showName();
+		p2.showAge();
+	</script>
+</head>
+<body>
+
+</body>
+</html>

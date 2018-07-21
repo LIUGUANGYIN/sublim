@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>倒三角</title>
+	<style>
+	span{
+		width: 10px;
+		height: 10px;
+		display: inline-block;
+	}
+		.sp{
+			width: 10px;
+			height: 10px;
+			display: inline-block;
+		}
+		.st{
+			width: 10px;
+			height: 10px;
+			display: inline-block;
+			color: red;
+		}
+	</style>
+    <script>
+		for(var i=0;i<5;i++){
+			var str ='';
+			for(var k=1;k<5-i;k++){
+				str=str+"<span class='sp'></span>";
+			}
+			for(var j=1;j<=i;j++){
+				str=str+"<span class='st'>*</span>";
+			}
+			document.write(str);
+			document.write('<br>');
+	}
+	</script>
+</head>
+<body>
+
+</body>
+</html>

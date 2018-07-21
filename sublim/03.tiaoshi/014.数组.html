@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8">
+	<title>014.数组.html</title>
+	<script>
+		var arr=[35,45,55,65,75,85,95]
+		console.log(arr)
+		/*arr.forEach(function(value,index){
+			console.log('index '+index+' '+value);
+		})*/
+		/*映射*/
+		/*var arr1=arr.map(function(value,index){
+			return 10;
+		})
+          console.log(arr1);
+          var arr2=arr.map(function(value,index){
+			return value+10;
+		})
+          console.log(arr2);*/
+          /*过滤*/
+        /* var arr3=arr.filter(function(value,index){
+         	return value>=40;
+          })
+         console.log(arr3)*/
+         /*都为真则为真*/
+          var arr4=arr.every(function(value,index){
+         	return value>=30;
+          })
+         console.log(arr4)
+         /*有一个为真即为真*/
+          var arr5=arr.some(function(value,index){
+         	return value>=300;
+          })
+         console.log(arr5)
+	</script>
+</head>
+<body>
+
+</body>
+</html>

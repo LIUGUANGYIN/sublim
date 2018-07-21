@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8">
+	<title>010.单例模式-皇帝上朝.html</title>
+	<script>
+		(function(w){
+			function King(){
+				this.name="皇帝"
+				this.id=Math.random();
+			}
+
+			King.prototype={
+				constructor:King,
+				_proto_:Object.prototype,
+				say:function(){
+					console.log(this.name+' '+this.id+" say:平身");
+				}
+			}
+
+			King.getking=(function(){
+				var king=null;
+			    return function(){
+				     if(!king){
+					     king=new King();
+				        }
+					     return king;
+				
+			       }
+			})()
+			
+		w.King=King;
+		})(window);
+
+		for(var i=0;i<=5;i++){
+			console.log("day "+i);
+			King.getking().say();
+		}
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8">
+	<title></title>
+	<script src="js/jquery-1.12.4.js"></script>
+	<script>
+		$(function(){
+			$('button').click(function(){
+				var $li=$('<li>新建节点</li>');
+				//$('ul').append($li)
+				//$li.appendTo($('ul'))
+				//$('ul').prepend($li)
+				//$li.perpendTo($('ul'))
+				//$('ul').after($li)
+				$li.before($('ul'))
+			});
+	})
+	</script>
+</head>
+<body>
+	<button>测试</button>
+	<ul>
+		<li>li1</li>
+		<li>li2</li>
+		<li>li3</li>
+	</ul>
+
+</body>
+</html>

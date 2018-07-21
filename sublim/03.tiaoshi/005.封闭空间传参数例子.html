@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8">
+	<title></title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		li{
+			width: 400px;
+			height: 30px;
+			border: 1px solid #000;
+		}
+		.active{
+			background: red;
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li class='active'></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+
+</body>
+<script>
+			var aLi=document.getElementsByTagName('li');
+			var iLastOne=0;
+			for(var i=0;i<aLi.length;i++){
+				/*aLi[i].onmouseover=function(){
+					for(var j=0;j<aLi.length;j++){
+						aLi[j].className='';
+					}
+					this.className='active';
+				}*/
+				(function(index){
+					aLi[index].onmouseover=function(){
+						aLi[iLastOne].className='';
+						this.className='active';
+						iLastOne=index;
+					}
+				})(i)
+			}
+	</script>
+</html>

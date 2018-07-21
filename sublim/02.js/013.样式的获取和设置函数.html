@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>013.样式的获取和设置函数.html</title>
+	<style>
+		#box{
+			width: 200px;
+			height: 200px;
+			border: 1px solid;
+		}
+	</style>
+	<script>
+		function css(){
+			if(arguments.length==2){
+				alert(getComputedStyle(arguments[0],false)[arguments[1]]);
+			}else{
+				arguments[0].style[arguments[1]]=arguments[2];
+			}
+		}
+		window.onload = function(){
+			var oBtn1 = document.getElementById('btn1');
+			var oBtn2 = document.getElementById('btn2');
+			var oBox = document.getElementById('box');
+			oBtn1.onclick = function(){
+				css(oBox,'width','400px');
+				css(oBox,'backgroundColor','red');
+			};
+			oBtn2.onclick = function(){
+				css(oBox,'width')
+				css(oBox,'backgroundColor')
+			}
+		}
+	</script>
+</head>
+<body>
+	<input type="button" id="btn1" value="设置样式">
+	<input type="button" id="btn2" value="获取样式">
+	<div id="box"></div>
+</body>
+</html>

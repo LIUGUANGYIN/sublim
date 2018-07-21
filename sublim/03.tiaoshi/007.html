@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+
+</body>
+<script>
+	function Pos(name,age){
+		this.name=name;
+		this.age=age;
+	}
+	Pos.prototype.showName=function(){
+		console.log('i am'+this.name)
+	}
+	Pos.prototype.showAge=function(){
+		console.log('i am'+this.age)
+	}
+	var p1=new Pos('tom',18);
+	p1.showAge();
+	p1.showName();
+</script>
+</html>

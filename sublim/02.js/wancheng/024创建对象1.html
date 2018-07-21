@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8">
+	<title></title>
+	<script>
+		function createPerson(name,age){
+			var obj= new Object;
+			obj.name=name;
+			obj.age=age;
+			obj.showName=function(){
+				console.log('I am '+ this.name);
+			}
+			obj.showAge=function(){
+				console.log( 'I am '+this.age+' years old')
+			}
+			return obj;
+		}
+		var p1=createPerson('Tom',20);
+		p1.showName();
+		p1.showAge();
+		
+		var p2=createPerson('Amy',30);
+		p2.showName();
+		p2.showAge();
+	</script>
+</head>
+<body>
+
+</body>
+</html>

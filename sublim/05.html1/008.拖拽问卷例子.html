@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>拖拽问卷例子</title>
+	<style>
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		.page{
+			width: 1000px;
+			margin: 50px auto;
+		}
+		.containe{
+			float: left;
+			width: 500px;
+			padding: 10px 30px;
+			min-height: 500px;
+			box-sizing: border-box;
+		}
+		.target{
+			float: left;
+			width: 500px;
+			min-height: 500px;
+			box-sizing: border-box;
+			border-left: 1px solid red;
+			padding: 10px;
+		}
+		.box{
+			width: 100%;
+			padding: 10px;
+			border: 1px dashed gray;
+			margin-bottom: 10px;
+		}
+	</style>
+</head>
+<body>
+	<div class="page">
+		<div class="containe">
+			<h2>问卷调查</h2>
+		</div>
+		<div class="target">
+			<div class="box" draggable="true">
+				<label for="">姓名</label>
+				<input type="text" name="usename">
+			</div>
+			<div class="box" draggable="true">
+				<label for="">年龄</label>
+				<input type="text" name="age">
+			</div>
+			<div class="box" draggable="true">
+				<label for="">爱好</label>
+				<input type="checkbox" name="hobby">蓝球
+				<input type="checkbox" name="hobby">足球
+				<input type="checkbox" name="hobby">羽毛球
+			</div>
+		</div>
+	</div>
+	
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		var targetEle='';
+		$('.target')
+		.on('dragstart','.box',function(){
+			targetEle=this;
+		});
+
+		$('.containe')
+		.on('drop',function(){
+			$(this).append($(targetEle).clone())
+		})
+		.on('dragover',function(ev){
+			ev.preventDefault();
+		})
+	})
+</script>
+</html>

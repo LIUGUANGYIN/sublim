@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8">
+	<title></title>
+	<script>
+		(function(w){
+			function text(){
+				alert('aas')
+			}
+			w.$=text
+		})(window)
+	</script>
+	<script src="js/jquery-1.12.4.js"></script>
+	<script>
+		var aa=jQuery.noConflict();
+		$();
+		jQuery(function(){
+			alert('ssa')
+		});
+		aa(function(){
+			alert('sas')
+		})
+	</script>
+</head>
+<body>
+
+</body>
+</html>

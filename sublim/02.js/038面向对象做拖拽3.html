@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head><meta charset="UTF-8">
+	<title></title>
+	<script>
+		window.onload=function(){
+			new Drag({width:200,height:200,background:"red"});
+			new Drag({width:100,height:100,background:"blue"});
+			new Drag({width:50,height:50,background:"yellow"});
+		}
+		function Drag(jie){
+			this.disX=0;
+			this.disY=0;
+			this.oDiv=document.createElement('div');
+			this.oDiv.style.width=jie.width+'px';
+			this.oDiv.style.height=jie.height+'px';
+			this.oDiv.style.background=jie.background;
+			this.oDiv.style.position='absolute';
+			document.body.appendChild(this.oDiv)
+			this.oDiv.onmousedown=this.fnDown.bind(this);
+	}
+	Drag.prototype.fnDown=function(ev){
+				var oEvent=ev||event;
+				this.disX=oEvent.clientX-this.oDiv.offsetLeft;
+				this.disY=oEvent.clientY-this.oDiv.offsetTop;
+				document.onmousemove=this.fnMove.bind(this);
+				document.onmouseup=this.fnUp;
+		}
+		Drag.prototype.fnMove=function(ev){
+					var oEvent=ev||event;
+					this.oDiv.style.left =oEvent.clientX-this.disX+'px';
+					this.oDiv.style.top=oEvent.clientY-this.disY+'px';
+				}
+			
+				Drag.prototype.fnUp=function(){
+					document.onmousemove=null;
+					document.onmouseup=null;
+			}
+		
+	</script>
+</head>
+<body>
+	<!--<div id='div1'></div> -->
+</body>
+</html>

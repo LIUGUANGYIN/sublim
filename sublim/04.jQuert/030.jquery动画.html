@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8">
+	<title>卷入/卷出</title>
+	<style>
+		div{
+			width: 200px;
+			height: 200px;
+			background: red;
+		}
+	</style>
+	<script src="js/jquery-1.12.4.js"></script>
+	<script>
+		$(function(){
+			$('button').eq(0).click(function(){
+				$('div').slideDown(1000,function(){
+					alert('aa');
+				})
+			})
+			$('button').eq(1).click(function(){
+				$('div').slideUp(1000,function(){
+					alert('aa');
+				})
+			})
+			$('button').eq(2).click(function(){
+				$('div').slideToggle(1000,function(){
+					alert('aa');
+				})
+			})
+	})
+	</script>
+</head>
+<body>
+	<button>显示</button>
+	<button>隐藏</button>
+	<button>切换</button>
+    <div></div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>022.高亮.html</title>
+	<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	li{
+		width: 100%;
+		height: 30px;
+		border: 1px solid;
+	}
+	</style>
+	<script>
+		window.onload = function(){
+			var aLi=document.getElementById('ul1').children;
+			for(i=0;i<aLi.length;i++){
+				if(i%2){
+					aLi[i].style.background='#ccc'
+				}else{
+					aLi[i].style.background=''
+				}
+				var ss='';
+				aLi[i].onmouseover=function(){
+					ss=this.style.background;
+					this.style.background='blue';
+				};
+				aLi[i].onmouseout=function(){
+					this.style.background=ss;
+				};
+			}
+		}
+	</script>
+</head>
+<body>
+	<ul id='ul1'>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+	
+</body>
+</html>

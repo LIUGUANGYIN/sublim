@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8">
+	<title>json与js的对象互相转化</title>
+	<script>
+		var json='{"name":"Tom","age":18}'
+		console.log(json);
+		var obj=JSON.parse(json);
+		console.log(obj);
+		var obj={
+			name:"Amy",
+			age:20,
+		}
+		console.log(obj)
+		var json=JSON.stringify(obj);
+		console.log(json)
+	</script>
+</head>
+<body>
+
+</body>
+</html>

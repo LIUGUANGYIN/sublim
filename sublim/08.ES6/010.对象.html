@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>对象</title>
+</head>
+<body>
+	
+</body>
+<script>
+	//Es5
+	// function Person(name,age){
+	// 	this.name=name;
+	// 	this.age=age
+	// }
+	// Person.prototype={
+	// 	constructor:Person,
+	// 	showName:function(){
+	// 		console.log('I am '+this.name);
+	// 	},
+	// 	showAge:function(){
+	// 		console.log('I am '+this.age+' year old');
+	// 	}
+	// };
+
+
+//Es6
+	class Person{
+		constructor(name,age){
+			this.name=name;
+			this.age=age;
+		}
+		showName(){
+			console.log('I am  '+this.name);
+		}
+		showAge(){
+			console.log('I am  '+this.age+'  year old');
+		}
+
+		static sayHi(){
+			console.log('hi......')
+		}
+	};
+	class student extends Person{
+		constructor(name,age,major){
+			super(name,age);
+			this.major=major;
+		}
+		showMajor(){
+			console.log('I am from '+this.major);
+		}
+		showName(){
+			console.log('I am '+this.name+' and');
+		}
+	}
+	// let p=new Person('Tom',18);
+	// p.showName();
+	// p.showAge();
+	
+
+	let s=new student('leo',20,'aa');
+	s.showName();
+	s.showAge();
+	s.showMajor();
+</script>
+</html>

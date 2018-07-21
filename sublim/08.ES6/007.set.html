@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>set</title>
+</head>
+<body>
+	
+</body>
+<script>
+	// let s=new Set();
+
+	// s.add(11);
+	// s.add(22);
+	// s.add(33);
+	// s.add(44);
+	// //删除
+	// s.delete(22);
+	// //清空
+	// s.clear();
+
+    //去重
+	let arr=[11,22,3,3,44,3,33,11];
+	let s=new Set(arr);
+	let arr2=[...s];
+	console.log(arr2);
+
+	for(key of s.keys()){
+		console.log(key);
+	}
+	for(value of s.values()){
+		console.log(value);
+	} 
+	for(entry of s.entries()){
+		console.log(entry);
+	}
+
+	s.forEach(function(value,key){
+		console.log(value,key);
+	}) 
+</script>
+</html>

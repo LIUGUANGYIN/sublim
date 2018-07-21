@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script>
+		function show(n1,n2){
+			console.log(this,n1,n2)
+		}
+		show();
+		show.call({name:"Tom"},100,200);
+		show.apply({name:"Amy"},[400,600]);
+		show.bind({name:"Jick"},100,200)();
+	</script>
+</head>
+<body>
+
+</body>
+</html>

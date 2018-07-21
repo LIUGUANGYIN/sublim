@@ -1,0 +1,99 @@
+/*
+多行注释保留
+*/
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: #fff;
+}
+h1 {
+  color: #ff0000;
+}
+a:hover {
+  color: #ff0000;
+}
+div {
+  margin-bottom: 10px;
+}
+.box1 {
+  width: 200px;
+  height: 100px;
+  background: #ff0000;
+}
+.border {
+  border-radius: 10px;
+}
+.box2 {
+  width: 200px;
+  height: 100px;
+  background: #ff0000;
+  border-radius: 10px;
+}
+.box3 {
+  width: 200px;
+  height: 100px;
+  background: #ff0000;
+  border-radius: 20px;
+}
+.box4 {
+  width: 200px;
+  height: 100px;
+  background: #ff0000;
+  border-radius: 10px;
+}
+/*
+.triangle{
+ 	width: 0;
+ 	height: 0;
+ 	overflow: hidden;
+ 	border-width: 10px;
+ 	border-color:red transparent transparent transparent;
+ 	border-style:solid;
+}*/
+.box5 {
+  border-width: 20px;
+  border-color: #0000ff transparent transparent transparent;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  border-style: solid;
+}
+.list {
+  width: 100%;
+}
+.list li {
+  list-style: none;
+  width: 100%;
+  height: 30px;
+  border-bottom: 1px solid #ccc;
+  box-sizing: border-box;
+  padding: 0 10px;
+}
+.list li span {
+  float: left;
+}
+.list li a {
+  display: inline-block;
+  float: right;
+}
+.list li:hover {
+  background-color: #f00;
+}
+.box6 {
+  font-size: 100px;
+}
+.box7 {
+  font-size: calc(70px-10px);
+  width: calc(100px-20px);
+}
+.box8 {
+  width: 200px !important;
+  height: 100px !important;
+  background: #ff0000 !important;
+}
+.box9 {
+  width: 100px;
+  height: 50px;
+}

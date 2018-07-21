@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8">
+	<title></title>
+	<style>
+	.fathe{
+		width: 500px;
+		height: 500px;
+		background: red;
+}
+.son{
+	width: 200px;
+	height: 200px;
+	background: blue;
+}
+</style>
+	<script src="js/jquery-1.12.4.js"></script>
+	<script>
+		$(function(){
+			$('.son').move(function(){
+				alert('son')
+			});
+			$('.fathe').click(function(){
+				alert('fathe')
+			})
+	})
+	</script>
+</head>
+<body><div class='fathe'>
+		<div class='son'>
+		</div>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8">
+	<title></title>
+	<style>
+		.fathe{
+		width: 500px;
+		height: 500px;
+		background: red;
+		margin: 100px auto;
+		border:1px solid;
+		position:relative;
+        }
+        .son{
+        	width: 200px;
+        	height: 200px;
+        	background: blue;
+        	position: absolute;
+        	top: 10px;
+        	left: 10px;
+
+        }
+	</style>
+	<script src="js/jquery-1.12.4.js"></script>
+	<script>
+		$(function(){
+			//只能获得
+			console.log($('.son').position())
+
+	})
+	</script>
+</head>
+<body><div class='fathe'>
+	<div class='son'></div>
+</div>
+</body>
+</html>

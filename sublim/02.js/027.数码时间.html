@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>027.数码时间.html</title>
+	<style>
+	body{
+		background: #000;
+	}
+		#box{
+			color: #fff;
+			font-size: 30px;
+			width: 400px;
+			margin: 100px auto;
+		}
+	</style>
+	<script>
+		function toStr(n){
+			if(n<10){
+				return '0'+n;
+			}else{
+				return ''+n;
+			}
+		}
+		window.onload=function(){
+			var oBox=document.getElementById('box');
+			var aImg=document.getElementsByTagName('img');
+			function timer(){
+				var now=new Date();
+			    var h=now.getHours();
+			    var m=now.getMinutes();
+			    var s=now.getSeconds();
+			    var str=toStr(h)+toStr(m)+toStr(s);
+			    for(var i=0;i<aImg.length;i++){
+			    	aImg[i].src='images/'+str.charAt(i)+'.png';
+			    }
+			}
+			setInterval(timer,1000);
+			timer();
+			
+		}
+	</script>
+</head>
+<body>
+	<div id='box'>
+		<img src="images/1.png" alt="">
+		<img src="images/2.png" alt="">
+		:
+		<img src="images/4.png" alt="">
+		<img src="images/5.png" alt="">
+		:
+		<img src="images/3.png" alt="">
+		<img src="images/8.png" alt="">
+	</div>
+	
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>024.搜索.html</title>
+	<script>
+		window.onload=function(){
+			var oTxt=document.getElementById('txt');
+			var oBtn=document.getElementById('btn');
+			var oUl=document.getElementById('ul1');
+			var aLi=oUl.children;
+			oBtn.onclick=function(){
+				var sTxt=oTxt.value.toLowerCase();
+				for(i=0;i<aLi.length;i++){
+					aLi[i].style.background='';
+				};
+				for(i=0;i<aLi.length;i++){
+					var sLi=aLi[i].innerHTML.toLowerCase();
+					var atxt=sTxt.split(' ');
+					for(j=0;j<atxt.length;j++){
+						if(sLi.search(atxt[j])!=-1){
+						aLi[i].style.background='blue';
+					    }
+					}
+					if(sTxt==''){
+						aLi[i].style.background=''
+					}
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<input type="text" id='txt'>
+	<input type="button" id='btn' value="提交">
+	<ul id='ul1'>
+		<li>amy</li>
+		<li>tom</li>
+		<li>amm</li>
+		<li>hi</li>
+		<li>table</li>
+		<li>Amt</li>
+		<li>张三</li>
+		<li>李四</li>
+		<li>王五</li>
+	</ul>
+</body>
+</html>

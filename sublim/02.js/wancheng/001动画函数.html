@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8">
+	<title>动画函数</title>
+	<style>
+		#div1{
+			width: 100px;
+			height: 100px;
+			background: red;
+		}
+		#div2{
+			width: 100px;
+			height: 100px;
+			background: red;	
+			margin-top: 10px;
+			
+		}
+		#div3{
+			width: 100px;
+			height: 100px;
+			background: red;
+			margin-top: 10px;
+			
+		}
+	</style>
+	<script>
+	    function animation(obj,attr,iTarget){
+		    clearInterval(obj.timer);
+		obj.timer=setInterval(function(){
+			if(attr=='opacity'){
+			var curr=parseFloat(getComputedStyle(obj,false)[attr]*100);
+            }else{
+	        var curr=parseFloat(getComputedStyle(obj,false)[attr]);
+            }
+            var iSpeed=0;
+            if(curr>iTarget){
+            	iSpeed=-10;
+            } else{
+            	iSpeed=10;
+            }
+            if(Math.abs(iTarget-curr)<=Math.abs(iSpeed)){
+            	clearInterval(obj.timer);
+            	if (attr=='opacity'){
+            	   obj.style[attr]=iTarget/100;
+                }else{
+            	   obj.style[attr]=iTarget+'px';
+                }
+            }else{
+        	    if(attr=='opacity'){
+            	   obj.style[attr]=(curr+iSpeed)/100;
+        	    }else{
+        		   obj.style[attr]=curr+iSpeed+'px';
+        	    }
+            }
+		},30)
+	}
+	window.onload=function(){
+		var oDiv1=document.getElementById('div1');
+		var oDiv2=document.getElementById('div2');
+		var oDiv3=document.getElementById('div3');
+		oDiv1.onmouseover=function(){
+			animation(this,'width', 400);
+		}
+		oDiv1.onmouseout=function(){
+			animation(this,'width',100);
+        }
+        oDiv2.onmouseover=function(){
+			animation(this,'height', 400);
+		}
+		oDiv2.onmouseout=function(){
+			animation(this,'height',100);
+        }
+        oDiv3.onmouseover=function(){
+			animation(this,'opacity', 30);
+		}
+		oDiv3.onmouseout=function(){
+			animation(this,'opacity',100);
+        }
+	}		
+	</script>
+</head>
+<body>
+<div id='div1'></div>
+<div id='div2'></div>
+<div id='div3'></div>
+
+</body>
+</html>

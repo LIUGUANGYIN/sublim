@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<input type="button" value="获取数据" id="btn">
+</body>
+<script>
+	var oBtn=document.getElementById('btn');
+	oBtn.onclick=function(){
+//创建ajax对象
+		var oAjax=new XMLHttpRequest();
+		console.log("after new::",oAjax.readyState);
+//和服务器建立连接
+		oAjax.open('GET','http://127.0.0.1:3000/015.txt',true);
+		console.log("after new::",oAjax.readyState);
+//发送请求
+		oAjax.send();
+		console.log("after new::",oAjax.readyState);
+//监听方法获取数据
+		oAjax.onreadystatechange=function(){
+			console.log('in event::',oAjax.readyState);
+		
+		if(oAjax.readyState==4){
+			console.log('get data::',oAjax.responseText)
+			if(oAjax.status==200){
+				console.log('get data success::',oAjax.responseText);
+			}else{
+				console.log('get data faild::',oAjax.status);
+
+			}
+		}
+	}
+}
+</script>
+</html>

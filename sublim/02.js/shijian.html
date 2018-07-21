@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>秒传时间</title>
+	<script>
+		var s=3756;
+		var h=parseInt(time/3600);
+		var m=parseInt((time%3600));
+		var s=(time%3600)%60;
+		if(h<10){
+			h='0'+h;
+		}
+		if (m<10){
+			m='0'+m;
+		}
+		if (s<10){
+			s='0'+s;
+		}
+		alert(h+':'+m+':'+s);
+	</script>
+</head>
+<body>
+<div class='alert'></div>
+</body>
+</html>

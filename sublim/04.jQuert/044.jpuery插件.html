@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8">
+	<title>类级别插件</title>
+	<script src="js/jquery-1.12.4.js"></script>
+	<script>
+		/*function Person(){
+			
+		}
+		Person.sayHi=function(){
+			alert('hi')
+		}
+		Person.sayHi();*/
+		/*$.sayHi=function(){
+			alert('hi');
+		}
+		$.sayHi();*/
+		/*$.extend({
+			sayHi:function(){
+				alert('hi')
+			}
+		})
+		$.sayHi();*/
+		var obj={
+			sayHi:function(){
+				alert('hi')
+			}
+		}
+		//obj.sayHi();
+		$.zs=obj;
+		$.zs.sayHi();
+	</script>
+</head>
+<body>
+
+</body>
+</html>

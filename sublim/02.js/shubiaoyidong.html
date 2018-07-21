@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8">
+	<title></title>
+	<style>
+	body{
+		width: 100%;
+		height: 3000px;
+	}
+		div{
+			width: 50px;
+			height: 50px;
+			background: red;
+			position: absolute;
+			top:0;
+			left: 0;
+		}
+	</style>
+	<script>
+		function onmousemove(ev){
+			var iTop=document.body.scrollTop||document.documentElement.scrollTop;
+			var iLeft=document.body.scrollLeft||document.documentElement.scrollLeft;
+			return {x:ev.clientX+iLeft,y:ev.clientY+iTop}
+				}
+		window.onload=function(){
+			var aDiv=document.getElementsByTagName('div');
+			document.onmousemove=function(ev){
+				var oEvent = ev || event;
+				var oPoint=getPoint(oEvent);
+				aDiv[0].style.top=oPoint.y+'px';
+				aDiv[0].style.left=oPoint.x+'px';
+
+				for(var i=aDiv.length-1;i>0;i--){
+					aDiv[i].style.top=oDiv[i-1].offsetTop+10+'px';
+					aDiv[i].style.left=oDiv[i-1].offsetLeft+10+'px';
+			}
+		}
+	}
+	</script>
+</head>
+<body>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+
+</body>
+</html>

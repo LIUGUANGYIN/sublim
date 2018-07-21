@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8">
+	<title>删除</title>
+	<style>
+		div{
+			width: 100px;
+			height: 100px;
+			border: 1px solid;
+		}
+	</style>
+	<script src="js/jquery-1.12.4.js"></script>
+	<script>
+		$(function(){
+			$('div').click(function(){
+				alert('div1')
+			})
+			$('button').click(function(){
+				//$div=$('div').remove()
+				$div=$('div').empty()
+				//var $div=$('div').detach();
+				$('body').append($div)
+
+			})
+	})
+	</script>
+</head>
+<body>
+	<button>删除</button>
+	<div>divdiv</div>
+
+</body>
+</html>

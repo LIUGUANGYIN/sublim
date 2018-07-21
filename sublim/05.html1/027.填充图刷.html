@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>填充图刷</title>
+<style>
+		canvas{
+			border: 1px solid #000;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="canvas"></canvas>
+	
+</body>
+<script>
+	var oCanvas=document.getElementById('canvas');
+	oCanvas.width=600;
+	oCanvas.height=600;
+	
+	var ctx=oCanvas.getContext('2d');
+
+	ctx.beginPath();
+	var img=new Image();
+	img.src='img/logo.png'
+	img.onload=function(){
+		var pattern=ctx.createPattern(img,'repeat');
+		// var pattern=ctx.createPattern(img,'no-repeat');
+		// var pattern=ctx.createPattern(img,'repeat-x');
+		// var pattern=ctx.createPattern(img,'repeat-y');
+		ctx.fillStyle=pattern;
+		ctx.fillRect(0,0,600,600);
+	}	
+</script>
+</html>  

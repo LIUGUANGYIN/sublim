@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>填充图片</title>
+	<style>
+		canvas{
+			border: 1px solid #000;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="canvas"></canvas>
+	
+</body>
+<script>
+	var oCanvas=document.getElementById('canvas');
+	oCanvas.width=600;
+	oCanvas.height=600;
+	
+	var ctx=oCanvas.getContext('2d');
+
+	ctx.beginPath();
+	var img=new Image();
+	img.src='img/girl.jpg'
+	img.onload=function(){
+		// ctx.drawImage(img,0,0);
+		// ctx.drawImage(img,0,0,200,200);
+		ctx.drawImage(img,120,40,100,100,100,100,300,300);
+	}	
+</script>
+</html>  

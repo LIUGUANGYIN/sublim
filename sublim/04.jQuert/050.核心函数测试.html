@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<!-- <script src="js/jquery-1.12.4.js"></script> -->
+	<script src="js/kquery-1.1.3.js"></script>
+	<script>
+     $(function(){
+	/*var arr=[11,22,33,44,55,66];
+	var aLi=document.getElementsByTagName('li');
+	var  Arrey={0:'aa',1:'bb',2:'cc',length:3}
+	console.log($(''));
+	console.log($(false));
+	console.log($(NaN));
+	console.log($(function(){}))
+	console.log('<div><p></p></div><div><p></p></div>');
+	console.log($(arr))*/
+	// console.log($('li').html('aa'))
+	// console.log($('div').append($('p')));
+	$('button').on('click',function(){
+		alert('click1')
+	})
+	$('button').on('click',function(){
+		alert('click2')
+	})
+	$('button').on('mouseover',function(){
+		alert('mouseover')
+	})
+	$('button').on('mouseout',function(){
+		alert('mouseout')
+	})
+	$('button').off('click',function(){
+		alert('click2')
+	})
+
+})
+</script>
+</head>
+<body>
+	<ul>
+		<li>li1</li>
+		<li>li2</li>
+		<li>li3</li>
+		<li>li4</li>
+	</ul>
+	<div class='dox1 box3'>11</div>
+	<div class='dox1 box3'>22</div>
+	<div class='dox1 box3'>33</div>
+	<div class='dox1 box3'>44</div>
+    <p>我是p</p>
+    <button>btn1</button>
+    <button>btn2</button>
+    <button>btn3</button>
+</body>
+
+</html>

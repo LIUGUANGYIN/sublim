@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8">
+	<title>选项卡</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.btn{
+			overflow: hidden;
+		}
+		.btn li{
+			width: 60px;
+			height: 30px;
+			line-height: 30px;
+			font-size: 20px;
+			background: #000;
+			color: #fff;
+			text-align: center;
+			border-radius: 10px;
+			float:left;
+			margin-right:10px;
+			cursor: pointer; 
+		}
+		.btn li.active{
+			background: rgba(255,255,0,0.5);
+			color: #000;
+		}
+		.con li{
+			width: 250px;
+			height: 300px;
+			border:1px solid;
+			display: none;
+		}
+	</style>
+	<script>
+		window.onload=function(){
+			var aBtn=document.getElementById('btn').children;
+			 var aConten=document.getElementById('conten').children;
+			
+				for(var i=0;i<aBtn.length;i++){
+					aBtn[i].index=i;
+				aBtn[i].onclick=function(){
+				   for(var j=0;j<aBtn.length;j++){
+					 aBtn[j].className='';
+					 aConten[j].style.display='none';
+				}
+				     aBtn[this.index].className='active';
+				     aConten[this.index].style.display='block';
+			
+				}
+
+			}
+		}
+	</script>
+</head>
+<body>
+	<ul id="btn" class="btn">
+		<li class="active">btn1</li>
+		<li>btn2</li>
+		<li>btn3</li>
+		<li>btn4</li>
+	</ul>
+	<ul id="conten" class="con">
+		<li style="display: block">conten1</li>
+		<li>conten2</li>
+		<li>conten3</li>
+		<li>conten4</li>
+		
+	</ul>
+
+</body>
+</html>

@@ -1,0 +1,137 @@
+/*
+多行注释保留
+*/
+//单行注释删除
+@color:#f00;
+@w:200px;
+@h:100px;
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	background: #fff;
+}
+h1{
+	color: @color;
+}
+a:hover{
+	color: @color;
+}
+div{
+	margin-bottom: 10px;
+}
+
+.box1{
+	width: @w;
+	height: @h;
+	background: @color;
+}
+.border{
+	border-radius: 10px;
+}
+.border-radius(@border:10px;){
+	border-radius: @border;
+}
+.border-radius-def(@radius:10px;){
+	-webkit-border-radius:@radius;
+	-ms-border-radius:@radius;
+	-o-border-radius:@radius;
+	border-radius: @radius;
+}
+.box2{
+	.box1;
+	.border;
+}
+.box3{
+	.box1;
+	.border-radius(20px); 
+}
+.box4{
+    .box1;
+	.border-radius();
+}
+/*
+.triangle{
+ 	width: 0;
+ 	height: 0;
+ 	overflow: hidden;
+ 	border-width: 10px;
+ 	border-color:red transparent transparent transparent;
+ 	border-style:solid;
+}*/
+.triangle(top,@w:10px,@color:red){
+	border-width: @w;
+ 	border-color:@color transparent transparent transparent;
+}
+.triangle(right,@w:10px,@color:red){
+	border-width: @w;
+ 	border-color: transparent @color transparent transparent;
+}
+.triangle(bottom,@w:10px,@color:red){
+	border-width: @w;
+ 	border-color: transparent transparent @color transparent;
+}
+.triangle(left,@w:10px,@color:red){
+	border-width: @w;
+ 	border-color: transparent transparent transparent @color;
+}
+//@_代表任意值，后面参数不能省略
+.triangle(@_,@w:10px,@color:red){
+	width: 0;
+	height: 0;
+	overflow: hidden;
+	border-style:solid;
+}
+.box5{
+	.triangle(top,20px,blue);
+}
+
+.list{
+	width: 100%;
+	li{
+		list-style: none;
+		width: 100%;
+		height: 30px;
+		border-bottom:1px solid #ccc;
+		box-sizing: border-box;
+		padding: 0 10px; 
+		span{
+			float: left;
+		}
+		a{
+			display: inline-block;
+			float: right;
+		}
+		//&代表上一级选择器
+		&:hover{
+			background-color:#f00; 
+		}
+	}
+}
+//符号的两侧至少有一个空格
+.fs(@a){
+	// font-size: @a + 10px;
+	// font-size: @a - 10px;
+	font-size: @a * 10px;
+	// font-size: @a / 10px;
+}
+.box6{
+	.fs(10px);
+}
+//~不再编译
+.box7{
+	font-size: ~'calc(70px-10px)';
+	width: ~'calc(100px-20px)';
+}
+.box8{
+	.box1 !important;
+}
+//设置样式的混合
+.setstyle(@attr,@value){
+    @ attr}:unit(@value,px);
+}
+.box9{
+	.setstyle(width,100);
+	.setstyle(height,50);
+}

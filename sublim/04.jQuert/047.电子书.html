@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>047.电子书.html</title>
+	<style>
+	*{
+		margin:0;
+		padding: 0;
+	}
+		.con{
+			position: absolute;
+			left: 50%;
+			top: 50%;
+		}
+		.book{
+			width: 780px;
+			height: 780px;
+			overflow: hidden;
+			margin-left: -390px;
+			margin-top: -390px; 
+		}
+	</style>
+	<script src="js/jquery-1.12.4.js"></script>
+	<script src="turnjs4/lib/turn.js"></script>
+	<script>
+
+		$(function(){
+			$('.book').turn();
+	})
+	</script>
+</head>
+<body>
+	<div class="con">
+		<div class="book">
+			<div class="page" style="background-image:url(turnjs4/samples/magazine/pages/1.jpg)"></div>
+			<div class="double" style="background-image:url(turnjs4/samples/magazine/pages/2.jpg)"></div>
+			<div class="double" style="background-image:url(turnjs4/samples/magazine/pages/3.jpg)"></div>
+			<div class="double" style="background-image:url(turnjs4/samples/magazine/pages/4.jpg)"></div>
+			<div class="double" style="background-image:url(turnjs4/samples/magazine/pages/5.jpg)"></div>
+			<div class="double" style="background-image:url(turnjs4/samples/magazine/pages/7.jpg)"></div>
+			<div class="double" style="background-image:url(turnjs4/samples/magazine/pages/8.jpg)"></div>
+			<div class="double" style="background-image:url(turnjs4/samples/magazine/pages/9.jpg)"></div>
+			<div class="double" style="background-image:url(turnjs4/samples/magazine/pages/10.jpg)"></div>
+			<div class="page" style="background-image:url(turnjs4/samples/magazine/pages/6.jpg)"></div>
+			
+		</div>
+	</div>
+	
+</body>
+</html>

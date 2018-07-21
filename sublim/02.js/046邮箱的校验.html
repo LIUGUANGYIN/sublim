@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head><meta charset="UTF-8">
+	<title></title>
+	<script>
+		window.onload=function(){
+		var oBtn=document.getElementById('btn');
+		var oTxt=document.getElementById('txt');
+		var oTxt1=document.getElementById('txt1');
+		oBtn.onclick=function(){
+			var val=oTxt.value;
+			var reg=/^\w+\w+\.[a-z]{2,5}$/;
+			if(reg.test(val)){
+				oTxt1.value='输入正确';
+			}else{
+				oTxt1.value='输入有误';
+			}
+		}}
+	</script>
+</head>
+<body>
+	<input type="text" id="txt">
+	<button id='btn'>邮箱校验</button>
+	<div>
+	<textarea name='' id='txt1' cols='30' rows='10' ></textarea>
+    </div>
+</body>
+</html>

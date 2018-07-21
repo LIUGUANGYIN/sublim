@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8">
+	<title>去除重复</title>
+	<script>
+		var arr=[12,36,56,45,25,45,56,12];
+		console.log(arr);
+		function remoreDup(arr){
+			var result=[];
+			for(var i=0;i<arr.length;i++){
+				var isDup=false;
+				for(var j=0;j<result.length;j++){
+					if(arr[i]==result[j]){
+						isDup=true;
+						break;
+					}
+				}
+				if(!isDup){
+					result.push(arr[i]);
+				}
+			}
+			return result;
+		
+		}
+		console.log(remoreDup(arr));
+	</script>
+</head>
+<body>
+
+</body>
+</html>

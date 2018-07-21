@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>canvas画直线</title>
+	<style>
+		canvas{
+			border: 1px solid #000;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="canvas"></canvas>
+	
+</body>
+<script>
+	var oCanvas=document.getElementById('canvas');
+	oCanvas.width=600;
+	oCanvas.height=300;
+
+	var ctx=oCanvas.getContext('2d');
+	ctx.moveTo(0,0);//指定起始坐标
+	ctx.lineTo(200,200);//直线终点坐标
+	ctx.lineTo(200,100);
+	ctx.strokeStyle='red';//指定描边的样式
+	ctx.lineWidth=1;//设置线条的宽度
+	ctx.fillStyle='#ff0'
+	ctx.closePath();//封闭
+	ctx.stroke();//描边
+	ctx.fill();//填充
+
+	ctx.beginPath();;//重新开始一个路径
+	ctx.moveTo(300,10);
+	ctx.lineTo(300,100);
+	ctx.lineTo(400,100);
+	ctx.lineTo(400,10);
+	ctx.lineTo(300,10);
+	ctx.fillStyle="#0e0"
+	ctx.stroke();
+	ctx.fill();
+</script>
+</html>

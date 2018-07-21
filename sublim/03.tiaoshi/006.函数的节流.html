@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8">
+	<title></title>
+	<style>
+		body{
+			height: 3000px;
+		}
+	</style>
+</head>
+<body>
+
+</body>
+<script>
+	/*var timer=null;
+	window.onresize=function(){
+		clearTimeout(timer);
+	timer=setTimeout(function(){
+		console.log(window.innerWidth);
+},500)
+	}*/
+	function thor(fn,delay){
+		var timer=null;
+		return function(){
+			clearTimeout(timer);
+			timer=setTimeout(fn,delay)
+		}
+	}
+	window.onresize=thor(function(){
+		console.log(window.innerWidth)
+	},400)
+</script>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>线性渐变</title>
+	<style>
+		canvas{
+			border: 1px solid #000;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="canvas"></canvas>
+	
+</body>
+<script>
+	var oCanvas=document.getElementById('canvas');
+	oCanvas.width=600;
+	oCanvas.height=600;
+	
+	var ctx=oCanvas.getContext('2d');
+    
+    var linearGredient=ctx.createLinearGradient(100,100,300,200);
+    linearGredient.addColorStop(0.1,'rgb(255,0,0)')
+    linearGredient.addColorStop(1,'rgb(0,255,0)')
+
+	ctx.fillStyle=linearGredient;
+
+	ctx.fillRect(100,100,200,100);
+	
+	ctx.fill();
+</script>
+</html>

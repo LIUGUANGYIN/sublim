@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>函数的参数</title>
+</head>
+<body>
+	
+</body>
+<script>
+	// function show(msg){
+	// 	msg=msg||'hello';
+	// 	if(typeof msg==='undefind'){
+	// 		msg='hello';
+	// 	}
+	// 	console.log(msg);
+	// }
+	// show();
+
+	// function show(msg='hello'){
+	// 	console.log(msg);
+	// }
+	// show('');
+
+	// function show(name,msg='hello'){
+	// 	console.log(name,msg);
+	// }
+	// show('Tom')
+
+	// function show(name,{age:18,sex:'男'}={}){
+	// 	console.log(name,age,sex);
+	// }
+	// show('Amy',20,nu);
+	function show(name,...arg){
+		console.log(name,arg[0],arg[1]);
+	}
+	show('tom',...['aa','dd'])
+</script>
+</html>

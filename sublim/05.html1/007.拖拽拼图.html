@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>拖拽拼图</title>
+	<style>
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		.container{
+			width: 500px;
+			height: 300px;
+			margin: 100px auto;
+		}
+		.container li{
+			list-style: none;
+			width: 100px;
+			height: 150px;
+			float: left;
+		}
+		.container li img{
+			width: 100px;
+			height: 150px;
+		}
+	</style>
+</head>
+<body>
+	<ul class="container">
+		<li draggable="true"><img src="img/01.png" alt=""></li>
+		<li draggable="true"><img src="img/02.png" alt=""></li>
+		<li draggable="true"><img src="img/03.png" alt=""></li>
+		<li draggable="true"><img src="img/04.png" alt=""></li>
+		<li draggable="true"><img src="img/05.png" alt=""></li>
+		<li draggable="true"><img src="img/06.png" alt=""></li>
+		<li draggable="true"><img src="img/07.png" alt=""></li>
+		<li draggable="true"><img src="img/08.png" alt=""></li>
+		<li draggable="true"><img src="img/09.png" alt=""></li>
+		<li draggable="true"><img src="img/10.png" alt=""></li>
+	</ul>
+	
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+		$(function(){
+			var targeEle=null;
+			$('.container')
+			.on('draggable','li',function(ev){
+				targeEle=this;
+			})
+			.on('drop','li',function(ev){
+				if(targeEle != this){
+					var tmp = targeEle.innerHTML;
+		            targeEle.innerHTML = this.innerHTML;
+				    this.innerHTML = tmp;
+				}
+			})
+			.on('dragover',function(ev){
+				ev.preventDefault();
+			})
+		})
+</script>
+</html>

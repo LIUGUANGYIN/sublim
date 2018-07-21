@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>显示/隐藏</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/common.css">
+	<style>
+		#box{
+			width: 200px;
+			height: 200px;
+			background: red;
+			display: none;
+			overflow: hidden;
+			padding-top: 30px;
+			padding-bottom: 30px;
+		}
+	</style>
+</head>
+<body>
+	<button>显示</button><button>隐藏</button>
+	<div id='box'></div>
+	<p>aaaaaaaa</p>
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+	var slient={
+		// show:function($elem){
+		// 	$elem.html('<p>要显示</p>');
+		// 	$elem.show();
+		// 	$elem.html($elem.html()+'<p>显示</p>');
+		// },
+		// hide:function($elem){
+		// 	$elem.hide();
+		// }
+		show:function($elem,showCallBack,showCallBack){
+			showCallBack();
+			$elem.show();
+			showCallBack();
+		},
+		hide:function($elem){
+			$elem.hide();
+		}
+		// show:function()
+	}
+	var $elem=$('#box');
+
+	$('button').eq(0).on('click',function(){
+		slient.show($elem,function(){
+			$elem.html('<p>我要显示了</p>')
+		},function(){
+			'<p>我显示了</p>'
+		})
+	});
+	$('button').eq(1).on('click',function(){
+		slient.hide($elem)
+	})
+</script>
+</html>

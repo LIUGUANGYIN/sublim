@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<input type="button" value="获取数据" id="btn">
+	<ul id='ul1'>
+	</ul>
+</body>
+<script>
+	(function(w){
+	function ajax(method,url,data,fnSucc,fnFaild){
+		// 1.创建一个ajax对象
+        var oAjax=new XMLHttpRequest();
+         //post方法处理
+        if(method=="POST"){
+        	// oAjax.open(请求方法，请求地址，是否异步) 
+        	oAjax.open(method,url,true); 
+        	//设置请求头,该方法必须在open和send中间调用
+		    oAjax.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+		     //post发送的数据 
+		    oAjax.send(data);
+        }else{
+        	if(data){
+        		url=url+"?"+data;
+        	}
+        	 // 2.用ajax对象建立连接
+        	 // oAjax.open(请求方法，请求地址，是否异步) 
+        	oAjax.open(method,url,true);
+        	 // 3.用ajax对象发送请求
+        	oAjax.send();
+        }
+
+        // 4.用ajax对象接收数据
+        oAjax.onreadystatechange=function(){
+        	// console.log(oAjax.readyState);
+                // 0 还没有初始化
+                // 1 已经初始化，但是还没有调用open方法
+                // 2 send方法已经调用
+                // 3 返回了部分数据
+                // 4 数据完全返回
+		    if(oAjax.readyState==4){
+		    	//请求完成，表明所有的数据已经返回，但并不代表成功
+			    if(oAjax.status==200){//成功
+				  fnSucc(oAjax.responseText) 
+			    }else{//失败
+				   fnFaild(oAjax.status) 
+			    }
+		    }
+	    }	   
+    }
+    w.ajax=ajax;
+})(window);
+
+        var oBtn=document.getElementById('btn');
+	    var oUl=document.getElementById('ul1');
+	
+	oBtn.onclick=function(){
+		
+		ajax('POST',
+		    'http://127.0.0.1:3000/postReq',
+		    "name=tom&age=18",
+		    function(val){
+		        console.log('get data success ###::',val);
+	        },
+	        function(status){
+		        console.log('err::',status);
+	        });    
+
+		ajax('GET',
+		    'http://127.0.0.1:3000/postReq',
+		    "name=tom&age=18",
+		    function(val){
+		    	console.log('get data success ###::',val);
+	        },
+	        function(status){
+		        console.log('err::',status);
+	        });
+/*
+	ajax('GET',
+		'http://127.0.0.1:3000/018.aa.json',"",
+		function(val){
+			console.log('get data success ###::',val);
+	    },
+	    function(status){
+		    console.log('err::',status);
+	    })	*/
+}
+</script>
+</html>

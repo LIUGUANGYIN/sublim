@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>promise立即执行</title>
+</head>
+<body>
+	
+</body>
+<script>
+	let promise=new Promise((resolve,reject)=>{
+		console.log('aaa');
+		resolve();
+	})
+	promise.then(()=>{
+		console.log('ccc');
+	})
+	console.log('bbb');
+</script>
+</html>

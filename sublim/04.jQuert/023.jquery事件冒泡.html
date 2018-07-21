@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8">
+	<title></title>
+	<style>
+	.fathe{
+		width: 500px;
+		height: 500px;
+		background: red;
+}
+.son{
+	width: 200px;
+	height: 200px;
+	background: blue;
+}
+.sun{
+	width: 50px;
+	height: 50px;
+	background: yellow;
+}
+</style>
+	<script src="js/jquery-1.12.4.js"></script>
+	<script>
+		$(function(){
+			$('.sun').click(function(){
+				alert('sun')
+				//return false
+				
+			});
+			$('.son').click(function(ev){
+				alert('son')
+				//return false
+				//ev.stopPropagation();
+			});
+			$('.fathe').click(function(){
+				alert('fathe')
+			})
+	})
+	</script>
+</head>
+<body><div class='fathe'>
+		<div class='son'>
+			<div class='sun'></div>
+		</div>
+	</div>
+
+</body>
+</html>

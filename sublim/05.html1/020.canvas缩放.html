@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>canvas缩放</title>
+	<style>
+		canvas{
+			border: 1px solid #000;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="canvas"></canvas>
+	
+</body>
+<script>
+	var oCanvas=document.getElementById('canvas');
+	oCanvas.width=600;
+	oCanvas.height=300;
+	
+	var ctx=oCanvas.getContext('2d');
+
+	ctx.beginPath();
+    ctx.scale(0.5,0.5)
+	ctx.strokeRect(10,10,150,50,);
+	ctx.strokeStyle='#fff';
+	ctx.lineWidth=10;
+	ctx.stroke();//描边
+</script>
+</html> 

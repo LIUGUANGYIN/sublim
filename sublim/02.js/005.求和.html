@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>004.求和.html</title>
+	<script>
+		window.onload=function(){
+		var oTxt1=document.getElementById('txt1');
+		var oTxt2=document.getElementById('txt2');
+		var oBtn=document.getElementById('btn');
+		oBtn.onclick = function(){
+			var value1=parseInt(oTxt1.value);
+			var value2=parseInt(oTxt2.value);
+			if(isNaN(value1)){
+				alert('第一个数字有误');
+			}else if(isNaN(value2)){
+				alert('第二个数字有误');
+			}else{
+				alert(value1+value2)
+			}
+		}
+	}	
+	</script>
+</head>
+<body>
+	<input type="text" id="txt1">
+	<input type="text" id="txt2">
+	<input type="button" id="btn" value='求和'>
+	
+</body>
+</html>

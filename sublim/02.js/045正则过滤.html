@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8">
+	<title></title>
+	<script>
+		window.onload=function(){
+		var oTxt1=document.getElementById('txt1');
+		var oBtn=document.getElementById('btn');
+		var oTxt2=document.getElementById('txt2');
+		
+		oBtn.onclick=function(){
+			var aa=oTxt1.value;
+		    var ss=/<[\w|\/]+>/g;
+			oTxt2.value=aa.replace(ss,'*');
+
+		}}
+	</script>
+</head>
+<body>
+	<textarea name='' id='txt1' cols='30' rows='10'></textarea>
+	<input type="button" id="btn" value="提交">
+	<textarea name='' id='txt2' cols='30' rows='10'></textarea>
+
+</body>
+</html>

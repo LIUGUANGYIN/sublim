@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8">
+	<title></title>
+	<style>
+		*{
+            margin: 0;
+			padding: 0;
+	}
+		#box{
+			width: 400px;
+			height: 50px;
+			background: #ccc;
+		}
+		#btn{
+			width: 50px;
+			height: 50px;
+			background: red;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+		#div1{
+			width: 400px;
+			height: 400px;
+			border:1px solid #000;
+			position: relative;
+			overflow: hidden;
+		}
+		#div2{
+			width: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+	</style>
+	<script>
+		window.onload=function(){
+			var oBtn=document.getElementById('btn');
+			var oBox=document.getElementById('box');
+			var oDiv1=document.getElementById('div1');
+			var oDiv2=document.getElementById('div2');
+			oBtn.onmousedown=function(ev){
+				var oEvent=ev||event;
+				var disX=oEvent.clientX-oBtn.offsetLeft;
+				var l=0;
+				document.onmousemove=function(ev){
+				     var oEvent=ev||event;
+				      l=oEvent.clientX-disX;
+				     handleMove();
+				 }
+				     oBox.onmousewheel=function(ev){
+				     	var oEvent=ev||event;
+				     	if(oEvent.wheelDelta>0){
+				     		l+=10;
+				     	}else{
+				     		l-=10;
+				     	}
+				     	handleMove();
+				     	return false;
+				     }
+				     function handleMove(){
+				     	if(l<0){
+					         l=0;
+				         }else if(l>=oBox.offsetWidth-oBtn.offsetWidth){
+						          l=oBox.offsetWidth-oBtn.offsetWidth;
+					     }
+					      var scale=l/(oBox.offsetWidth-oBtn.offsetWidth);
+
+					      oBtn.style.left=l+'px';
+
+					      oDiv2.style.top=(-oDiv2.offsetHeight+oDiv1.offsetHeight)*scale+'px';
+				}
+				 		
+				document.onmouseup=function(){
+					document.onmousemove=null;
+					document.onmouseup=null;
+				}
+		}
+	}
+	</script>
+</head>
+<body>
+	<div id='box'>
+	    <div id='btn'></div>
+	</div>
+	<div id='div1'>
+		<div id='div2'>
+			###什么是WEB?
+WEB就是各种各样精美的网站(手机端和移动端)
+###什么是全栈工程师?
+全栈工程师，也叫全端工程师(同时具备前端和后台能力)，英文Full Stack  developer,
+掌握多种技能，并能利用多种技能独立完成产品的人,打个比方,全栈工程师就是一个能独立盖一幢10层小洋楼的人，而普通工程师，则是可以和一群人盖一幢摩天大楼的人
+###为什么全栈工程师是一种趋势？
+* 降低项目沟通成本
+* 降低项目人员成本
+* 降低公司的运营成本
+###成为一名合格的全栈工程师的必要条件？
+* 兴趣
+* 狂敲代码
+###如何学习技术?
+* 注重基础
+* 善于总结
+> 1.对知识点分类汇总,整理出自己的知识库
+> 
+> 2.把知识点分别存在内存和硬盘,对于内存区的知识要做到随叫随到,对于硬盘区的知识要做到可以通过查阅资料来解决问题
+* 多做项目
+###英文不好能不能学好编程？
+不可否认,英文好对于学习技术会有很大帮助,因为一手的资料和代码本身都是英文,但是这些英文都是非常基础的,大家不必担心,英文不太好的同学可以在边学技术的时候边整理记下这些英文就可以了
+###数学不好能不能学好编程?
+如果你是专门研究算法模型的,对数学确实有些要求,但对于应用开发来说,数学并不是必要条件,因为很多功能前人已经帮我们实现好了,我直接拿来用就可以了
+###没有高学历能不能学好编程?
+学历并不等于能力,当然高学历科班出身的同学在找工作时多少会有一些优势,但最终决定你能否找到好工作的只有一个条件,那就是技术能力和综合素质
+###没有计算机基础能不能学好编程?
+基础理论决定了你在这个领域能飞多高,因此,我在课程安排上会有一些基础知识的补充,对于零基础的学员不必担心,只要你按照我们设置的课程一步一个脚印的来学习,是完全可以学好的
+###如何上技术课堂?
+* 多数情况下,我们的教学模式是: 老师讲解基础理论知识->老师提出相应需求->学生自己试着解决->老师讲解解决思路并现场代码实现->学生完善自己的代码->学生总结并管理自己的代码
+* 不管是线下上课,还是课后看视频复习,切记一点,千万不要老师在讲,你在抄老师的代码,一定要做到老师讲的时候专心听,把听到的技术点加上自己的理解再用代码来验证,碰到问题自己试着解决,解决不了带着你解决的思路再来问老师###什么是WEB?
+WEB就是各种各样精美的网站(手机端和移动端)
+###什么是全栈工程师?
+全栈工程师，也叫全端工程师(同时具备前端和后台能力)，英文Full Stack  developer,
+掌握多种技能，并能利用多种技能独立完成产品的人,打个比方,全栈工程师就是一个能独立盖一幢10层小洋楼的人，而普通工程师，则是可以和一群人盖一幢摩天大楼的人
+###为什么全栈工程师是一种趋势？
+* 降低项目沟通成本
+* 降低项目人员成本
+* 降低公司的运营成本
+###成为一名合格的全栈工程师的必要条件？
+* 兴趣
+* 狂敲代码
+###如何学习技术?
+* 注重基础
+* 善于总结
+> 1.对知识点分类汇总,整理出自己的知识库
+> 
+> 2.把知识点分别存在内存和硬盘,对于内存区的知识要做到随叫随到,对于硬盘区的知识要做到可以通过查阅资料来解决问题
+* 多做项目
+###英文不好能不能学好编程？
+不可否认,英文好对于学习技术会有很大帮助,因为一手的资料和代码本身都是英文,但是这些英文都是非常基础的,大家不必担心,英文不太好的同学可以在边学技术的时候边整理记下这些英文就可以了
+###数学不好能不能学好编程?
+如果你是专门研究算法模型的,对数学确实有些要求,但对于应用开发来说,数学并不是必要条件,因为很多功能前人已经帮我们实现好了,我直接拿来用就可以了
+###没有高学历能不能学好编程?
+学历并不等于能力,当然高学历科班出身的同学在找工作时多少会有一些优势,但最终决定你能否找到好工作的只有一个条件,那就是技术能力和综合素质
+###没有计算机基础能不能学好编程?
+基础理论决定了你在这个领域能飞多高,因此,我在课程安排上会有一些基础知识的补充,对于零基础的学员不必担心,只要你按照我们设置的课程一步一个脚印的来学习,是完全可以学好的
+###如何上技术课堂?
+* 多数情况下,我们的教学模式是: 老师讲解基础理论知识->老师提出相应需求->学生自己试着解决->老师讲解解决思路并现场代码实现->学生完善自己的代码->学生总结并管理自己的代码
+* 不管是线下上课,还是课后看视频复习,切记一点,千万不要老师在讲,你在抄老师的代码,一定要做到老师讲的时候专心听,把听到的技术点加上自己的理解再用代码来验证,碰到问题自己试着解决,解决不了带着你解决的思路再来问老师
+		</div>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,468 @@
+/*
+* @Author: TomChen
+* @Date:   2018-04-08 10:56:50
+* @Last Modified by:   TomChen
+* @Last Modified time: 2018-04-08 16:27:15
+*/
+/*Index common*/
+a{
+	text-decoration: none;
+	font-size: 12px;
+	color: #b0b0b0;
+}
+a:hover{
+	color: #fff;
+}
+.col1{
+	width: 234px;
+}
+.col4{
+	width: 978px;
+}
+/*Top*/
+.top{
+	height: 40px;
+	background:black;
+	color: #fff;
+}
+.top .nav{
+	/*width: 500px;*/
+	height: 40px;
+	/*background: gold;*/
+	float: left;
+}
+.top .nav li{
+	height: 40px;
+	line-height: 40px;
+	float: left;
+}
+.top .userinfo li span,
+.top .nav li span{
+	margin: 0 0.5em;
+	color: #333;
+}
+.top .cart{
+	width: 120px;
+	height: 40px;
+	line-height: 40px;
+	padding-left: 20px;
+	margin-left: 20px;
+	background: #424242;
+	float: right;
+}
+.top .cart a{
+	font-size: 20px;
+}
+.top .cart i{
+	font-size: 20px;
+	vertical-align: top;
+	margin-top: -12px;
+}
+.top .cart span{
+	font-size: 12px;
+}
+.top .cart a:hover{
+	color: #ff6700;
+}
+.top .userinfo{
+	/*width: 160px;*/
+	height: 40px;
+	/*background: pink;*/
+	float: right;
+}
+.top .userinfo li{
+	height: 40px;
+	line-height: 40px;
+	float: left;
+}
+/*Header*/
+.header{
+	height: 100px;
+	/*background: blue；*/
+}
+.header .logo{
+	width: 55px;
+	height: 100px;
+	/*background: red;*/
+	float: left;
+}
+.header .logo a{
+	display: inline-block;
+	width: 55px;
+	height: 55px;
+	background-image: url(../images/logo.png);
+	background-repeat: no-repeat;
+	background-color: #ff6700;
+	margin-top: 22px;
+}
+.header .nav{
+	width: 875px;
+	height: 100px;
+	/*background: tomato;*/
+	float: left;
+	padding-left: 176px;
+	box-sizing: border-box;
+}
+.header .nav li{
+	float: left;
+	margin-right: 20px;
+}
+.header .nav li a{
+	display: inline-block;
+	height: 100px;
+	line-height: 100px;
+	font-size: 16px;
+	color: #333;
+}
+.header .nav li a:hover{
+	color: #ff6700;
+}
+.header .search{
+	width: 296px;
+	height: 100px;
+	line-height: 100px;
+	/*background: pink;*/
+	float: right;
+}
+.header .search .inputer{
+	display: inline-block;
+	width: 244px;
+	height: 52px;
+	border: 1px solid#e0e0e0;
+	margin-top: 24px;
+	position: relative;
+}
+.header .search .inputer input{
+	width: 100%;
+	height: 100%;
+	outline:none;
+	position: absolute;
+	left: 0;
+	top:0;
+	box-sizing: border-box;
+	padding-left: 10px;
+}
+.header .search .inputer a{
+	height: 24px;
+	line-height: 24px;
+	padding: 0.5px;
+	text-align: center;
+	background:#eee;
+	position: absolute;
+	top: 14px;
+	color: #757575;
+}
+.header .search .inputer a:hover{
+	background:#ff6700;
+	color:#fff; 
+}
+.header .search .inputer a:nth-of-type(1){
+	left: 20px;
+}
+.header .search .inputer a:nth-of-type(2){
+	left: 100px;
+}
+.header .search .search-btn{
+	display: inline-block;
+	width: 50px;
+	height: 54px;
+	box-sizing: border-box;
+	border: 1px solid#e0e0e0;
+	border-left: none;
+	line-height: 52px;
+	text-align: center;
+	margin-top: 24px;
+	vertical-align: top;
+	font-size: 20px;
+	font-weight: 400;
+	color: #616161;
+}
+.header .search .search-btn:hover{
+	background:#ff6700;
+	color: #fff;
+
+}
+/*Hot*/
+.hot{
+	height: 1270px;
+	background: yellow;
+}
+.hot .banner{
+	width: 100%;
+	height: 460px;
+	position: relative;
+}
+.hot .cate{
+	width: 234px;
+	height: 460px;
+	background: rgba(0,0,0,0.7);
+	position: absolute;
+	left:0;
+	top:0;
+	z-index: 999;
+	padding:20px 0;
+	box-sizing: border-box;
+}
+.hot .cate li{
+	height: 42px;
+	width: 234px;
+}
+.hot .cate li a{
+	display: inline-block;
+	width: 100%;
+	height: 42px;
+	line-height: 42px;
+	box-sizing: border-box;
+	padding:0 20px 0 30px;
+	font-size: 14px;
+	position: relative;
+}
+.hot .cate li a span{
+	position: absolute;
+	/*top: 15px;*/
+	right: 20px;
+}
+.hot .cate li a:hover{
+	background:#ff6700;
+	color: #fff;
+}
+.hot .catecontent{
+	position: absolute;
+	min-width: 500px;
+	height: 460px;
+	background: #fff;
+	z-index: 9999;
+	top: 0;
+	left: 234px;
+	border: 1px solid #ccc;
+}
+.hot .catecontent li{
+	height: 100px;
+	width: 250px;
+	float: left;
+}
+.hot .catecontent li img{
+	width: 100px;
+	height: 100px;
+}
+.hot .catecontent li a{
+	font-size: 20px;
+	color: #000;
+	top: 0px;
+	left:100px;
+	padding-top: 40px; 
+}
+.hot .carousel{
+	width: 100%;
+	height: 460px;
+	background: red;
+	position: absolute;
+	left:0;
+	top:0;
+}
+.hot .carousel .img-box li{
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+.hot .carousel .img-box li img{
+	width: 100%;
+	height: 100%;
+}
+.leftArrow,
+.rightArrow{
+	display: inline-block;
+	width: 30px;
+	height: 60px;
+	line-height: 60px;
+	text-align: center;
+	font-size: 24px;
+	color: #fff;
+	background: rgba(0,0,0,0.7);
+	position: absolute;
+	top: 200px;
+	cursor: pointer;
+}
+.leftArrow:hover,
+.rightArrow:hover{
+	background: rgba(0,0,0,0.3);
+}
+
+.leftArrow{
+	left: 234px;
+
+}
+.rightArrow{
+	right: 0;
+}
+.hot .carousel .btn-box{
+	position: absolute;
+	right: 20px;
+	bottom: 20px;
+	z-index: 999;
+}
+.hot .carousel .btn-box li{
+	float: left;
+	width: 10px;
+	height: 10px;
+	border: 1px solid #000;
+	border-radius: 50%;
+	margin-right: 5px;
+	cursor: pointer;	
+}
+.hot .start{
+	height: 170px;
+	margin-top: 14px;
+}
+.hot .start .goods{
+	width: 234px;
+	height: 100%;
+	background:#5f5750;	
+	float: left;	
+}
+.hot .start .goods li{
+	width: 78px;
+	height: 85px;
+	float: left;
+	text-align: center;
+	padding-top: 20px;
+	box-sizing: border-box;
+	position: relative;
+}
+.hot .start .goods li a i{
+    font-size: 20px;
+}
+.hot .start .goods li a span{
+	display: block;
+	font-size: 12px;
+}
+
+.hot .start .list{
+	height: 170px;
+	width: 980px;
+	float: right;
+}
+.hot .start .list li{
+	width: 316px;
+	height: 100%;
+	margin-right: 15px;
+	float: left;
+	transition: all 0.2s;
+}
+.hot .start .list li:hover{
+	box-shadow: 0 0 30px rgba(0,0,0,0.1);
+}
+.hot .start .list li a{
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+}
+.hot .start .list li img{
+	width: 100%;
+	height: 100%
+}
+.hot .start .list li:last-child{
+	margin-right: 0px;
+}
+.hot .flash{
+	width: 100%
+}
+.hot .flash .box-hd{
+	height: 58px;
+	margin-top: 26px;
+	line-height: 58px;
+}
+.hot .flash .box-hd h3{
+	font-size:20px;
+	color: #333;
+	font-weight: 400;
+	float: left; 
+}
+.hot .flash .box-hd .more{
+	float: right; 
+}
+.hot .flash .box-hd .more span{
+	display: inline-block;
+	width: 34px;
+	height: 22px;
+	line-height: 22px;
+	text-align: center;
+	border: 1px solid #e0e0e0;
+	color: #b0b0b0;
+}
+.hot .flash .box-hd .more span:last-child{
+	border-left: none;
+}
+.hot .flash .box-bd{
+	height: 340px;
+	
+}
+.hot .flash .box-bd li{
+	height: 340px;
+	background: #ccc;
+	margin-right: 14px;
+	float: left;
+	border-top:1px solid red; 
+}
+.hot .flash .box-bd li:nth-child(1){
+	background:#f1eded;
+	text-align: center;
+}
+.hot .flash .box-bd li:nth-child(1) .num{
+	color: #ef3a3b;
+	font-size: 20px;
+	margin: 54px 0 40px 0;
+	font-weight: bold;
+}
+.hot .flash .box-bd li:nth-child(1) .desc{
+	color: #333;
+	font-size: 15px;
+	margin: 40px 0;
+}
+.hot .flash .box-bd li:nth-child(1) .timer .box{
+	font-size: 22px;
+	color: #fff;
+	padding: 10px;
+	background: #666;
+}
+.hot .flash .box-bd li:nth-child(1) .timer .dash{
+	font-size:22px;
+	font-weight: bold;
+}
+.hot .flash .box-bd li a{
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+}
+.hot .flash .box-bd li .img-box{
+	width: 148px;
+	height: 158px;
+	margin: 30px auto;
+}
+.hot .flash .box-bd li .img-box img{
+	width: 100%；
+	height：100%
+}
+.hot .flash .box-bd li .intro{
+	color: #000;
+	font-size: 20px;
+}
+.hot .flash .box-bd li:last-child{
+	margin-right: 0px;
+}
+/*Main*/
+.main{
+	height: 2177px;
+	background: pink;
+}
+/*Footer*/
+.footer{
+	height: 277px;
+	background: gray;
+}
+/*End*/
+.end{
+	height: 148px;
+	background: gold;
+}

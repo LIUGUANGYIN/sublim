@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8">
+	<title>对象级别插件</title>
+	<style>
+		div{
+			width: 100px;
+			height: 100px;
+			border: 1px solid;
+		}
+	</style>
+	<script src="js/jquery-1.12.4.js"></script>
+	<script>
+		(function($){
+			$.fn.setColor=function(options){
+				var defaults = {
+					color:'red'
+				};
+				options=$.extend(defaults,options);
+				this.each(function(){
+					this.style.color=options.color;
+				});
+		};		
+	})(jQuery);
+		$('button').click(function(){				
+				$('div').setColor({color:'blue'});
+			});
+	</script>
+</head>
+<body>
+	<button>点击</button>
+	<div>div1</div>
+	<div>div2</div>
+	<div>div3</div>
+
+</body>
+</html>

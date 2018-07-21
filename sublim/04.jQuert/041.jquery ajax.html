@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8">
+	<title></title>
+	<script src="js/jquery-1.12.4.js"></script>
+	<script>
+		$(function(){
+			$('button').click(function(){
+				$.ajax({
+					url:'http://127.0.0.1:3000/data.json',
+					//type:'GET',
+					//data:{name:'tom',age:18},
+					//datatype:'json',
+					success:function(data){
+						console.log(data)
+					},
+					//error:function(jqXHR,type){
+					//	alert('shi')
+					//}
+
+				})
+			});
+	})
+	</script>
+</head>
+<body>
+	<button>发送请求</button>
+
+</body>
+</html>

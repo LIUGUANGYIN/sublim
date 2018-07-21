@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8">
+	<title></title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.button li{
+			width: 50px;
+			height: 30px;
+			list-style: 30px;
+			border: 1px solid;
+			float: left;
+		}
+		.conter li{
+			width: 100px;
+			height:100px;
+			border: 1px solid;
+
+		}
+		.active{
+			background: black;
+		}
+		.con{
+
+		}
+	</style>
+	<script src="js/jquery-1.12.4.js"></script>
+	<script>
+		$(function(){
+			$('button>li').click(function(){
+				var $this=$(this);
+				$this.addClass('.active');
+				$('conter').addClass('.con');
+				$('')
+			})
+	})
+	</script>
+</head>
+<body>
+  <ul class='button'>
+  	<li>btn1</li>
+  	<li>btn2</li>
+  	<li>btn3</li>
+  	<li>btn4</li>
+  </ul>
+  <ul class='conter'>
+  	<li>内容1</li>
+  	<li>内容2</li>
+  	<li>内容3</li>
+  	<li>内容4</li>
+  </ul>
+
+</body>
+</html>
